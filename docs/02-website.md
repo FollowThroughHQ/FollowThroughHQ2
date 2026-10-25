@@ -40,4 +40,4 @@ The site is one page, `resources/views/home.blade.php`, served by a small Larave
 - A single large file is easy to start with but harder to maintain. Consider splitting data into JSON files later.
 
 ## Placeholders to replace
-Search `resources/views/home.blade.php` for: `[Your Name]`, `[Your Name / Company]`, `[address]`, `[country]`, `[country/state]`, `[date]`, `[X years]`, `[industries / roles]`, `[One sentence on a result or lesson you’re proud of.]`, `Add a photo and a short personal line here.`, and `hello@yourdomain.com`.
+All filled on 2026-10-25 (name, address, country and governing law were left out on purpose). The test-site check fails if any of these come back: `[Your Name]`, `[Your Name / Company]`, `[address]`, `[country]`, `[country/state]`, `[date]`, `[X years]`, `[industries / roles]`, `[One sentence on a result or lesson you’re proud of.]`, `Add a photo and a short personal line here.`, and `hello@yourdomain.com`.

@@ -30,7 +30,7 @@ Step-completion checkmarks persist in the visitor's `localStorage` under `ft:<sl
 
 ## Current gaps (deliberate, see docs)
 
-- Placeholders not yet filled: search for `[Your Name]`, `[address]`, `[date]`, `hello@yourdomain.com` etc. (full list in `docs/02-website.md`).
+- Placeholders filled on 2026-10-25. The owner chose to leave out his name, address, country, governing law and background industries, so About, Privacy and Terms are worded without them (the Privacy page names no operator). The test-site check fails if any placeholder from `docs/02-website.md` comes back.
 - Signups arrive as emails in your inbox (via `routes/api.php`); they aren't stored in a list until the Sheets integration (`docs/06`) is added.
 - Every guide is at roofing's depth (written by the niche-guide skill, PR #1, replacing the thinner originals). The claims PR #1 lists as unconfirmed per guide still need checking before publishing.
 - Content is general education, not legal/tax/financial advice — costs and rules are estimates to verify before publishing.

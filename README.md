@@ -27,7 +27,7 @@ Everything else (`app/`, `config/`, `public/`...) is standard Laravel.
 ## Quick start
 
 1. Run the site locally (see `docs/08-signup-server.md`): `php artisan serve`, then open `http://127.0.0.1:8000`.
-2. Replace the placeholders (search `resources/views/home.blade.php` for `[Your Name]`, `[address]`, `[country]`, `[date]`, `[X years]`, `hello@yourdomain.com`).
+2. Placeholders are filled (2026-10-25); the test-site check (`.claude/skills/test-site/`) fails if any from `docs/02-website.md` come back.
 3. Host it on any PHP host (see `docs/08-signup-server.md`).
 4. To also save signups in a Google Sheet, see `docs/06-google-sheets-forms.md`.
 
