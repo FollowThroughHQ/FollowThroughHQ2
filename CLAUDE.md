@@ -37,11 +37,58 @@ Step-completion checkmarks persist in the visitor's `localStorage` under `ft:<sl
 
 ## How to reply
 
-Emil Kirilov asked for these rules on 2026-10-25, copied and trimmed from the ones his Kreston Bulmar projects use.
+Emil Kirilov asked for these rules on 2026-10-25, copied and trimmed from the ones his Kreston Bulmar projects use, then reworked the same day for the project's owner.
+
+### Who you're talking to
+
+The person in the session is the project's owner, a friend of Emil's. He isn't technical, and he does the day-to-day work with you. Emil, the developer, set these rules up. If the person says they're Emil, technical language is fine for that session.
 
 ### Plain English
 
-Explain things in plain English first: what happens, step by step, in everyday words. File names, line numbers and code terms come after, as supporting detail, not instead of the explanation.
+Explain how things work and what happens, step by step, in everyday words, at his level (below). Describe what happened, not the tool: "your change is saved on your computer but hasn't reached GitHub yet", not "it isn't pushed". File names and code come last, and only when they help him.
+
+At level 1, say it like this:
+
+| Instead of | Say |
+|---|---|
+| commit | save a checkpoint |
+| push | send to GitHub (the online copy of the project) |
+| repository, repo | the project |
+| run the tests | check that nothing broke |
+| server, localhost | the preview on your computer |
+| deploy | put it on the live website |
+| merge conflict | your change and someone else's touched the same spot |
+
+### His language level
+
+Level: 1 (not checked with him yet)
+
+- **1:** everyday words only. The starting point.
+- **2:** everyday words, plus the real term in brackets the first time it comes up, so he picks it up: "sent to GitHub (developers call this a push)".
+- **3:** the real terms, each explained briefly the first time.
+
+Ask him whether to tune it down or up: end a session's first report with "Was that too technical, too simple, or about right?" until he answers "about right" at the current level. After that, ask only when he seems lost (he asks what a word means) or bored.
+
+Accept whatever feedback he gives on how you explain things, about the level or anything else (too long, too short, "say X instead of Y"): move the level or add a note below, save and send this file, and tell him in one line what you changed.
+
+What he's told us:
+- (nothing yet)
+
+### Getting started
+
+While the level above says "not checked with him yet", start your first reply with a short welcome in these points, then do what he asked:
+- Tell me what you want in your own words, one thing at a time: "add a guide for pest control", "make the roofing page shorter".
+- After a change, I open the page on your computer and give you a link, so you can look at it.
+- Every change is saved as a checkpoint and sent to GitHub, the online copy of the project. Nothing gets lost: say "undo that" at any time.
+- Sending to GitHub doesn't change the live website. Emil puts changes live.
+- Sometimes a box asks for your permission before I do something on your computer. It says what I'm about to do; if you're unsure, say no and ask me.
+- If I say something you don't understand, ask "what does that mean?"
+
+Then ask the level question. When he answers, set the level and remove "not checked with him yet".
+
+### Run things yourself
+
+Do everything you can yourself: start the preview (`php artisan serve`, in the background) and give him the link, check that nothing broke, save and send. Ask him only for what only he can do, such as signing in to a website or clicking a button there, as click-by-click steps that say where.
 
 ### Stay on the session's goal
 
@@ -59,14 +106,14 @@ Emil asked for this on 2026-10-25.
 - Whenever you add an idea, say so in that turn's report, in `## Ideas`.
 - When an idea becomes a task or the user drops it, take it out of `ideas.md`.
 
-### Branches and pull requests
+### Saving and sending to GitHub
 
-Emil asked for this on 2026-10-25.
+Emil asked for this on 2026-10-25. For now there are no branches and no pull requests: they would confuse the owner while he learns to work with you. Emil will add the harder parts later, one at a time; don't bring them up before that.
 
-- A change that touches only Markdown (`.md`) files gets no branch and no pull request: commit it straight to `main` and push, without asking. A change that also touches any other file follows the rules below.
-- Every branch gets a pull request. As soon as a branch has its first commit, push it and open one, as a draft while the work isn't finished. Never leave a branch without a pull request.
-- Always give the pull request's link: in `## Branches`, and in any status line or decision about that branch.
-- Merging is the user's decision. Ask, and wait for a yes.
+- When a change is finished, run `php artisan test` (not needed for a change to `.md` files only). If it passes, commit only the files you changed and push to `main`, without asking. Tell him: "Saved and sent to GitHub."
+- If the check fails, don't send. Fix it, or explain in plain words what's wrong and what you suggest.
+- If GitHub has newer changes, bring them in first (`git pull --rebase`). If they clash with yours, stop and tell him Emil needs to look; don't try to sort it out with him.
+- "Undo that" means a new checkpoint that reverses the change (`git revert`), sent like any other. Never rewrite what's already on GitHub.
 
 ### The report at the end of every turn
 
@@ -81,7 +128,7 @@ The user reads only the last message of each turn, not the messages between tool
 | Emoji | Status | When |
 |---|---|---|
 | ⏳ | Waiting | It needs an answer or a decision. Say from whom: "⏳ You: …". |
-| 👀 | Ready for your check | Your part is done. The user reviews, merges, publishes or tries it. Link its pull request. |
+| 👀 | Ready for your check | Your part is done. The user looks at it or tries it. Give the preview link. |
 | 🔄 | In progress | Started but not finished, or running in the background. |
 | ⏩ | Up next | Agreed, not started. |
 | ✅ | Done | Finished. One short line, shown once. |
@@ -90,10 +137,10 @@ The user reads only the last message of each turn, not the messages between tool
 Order the lines by status as in the table: what needs the user first, done last. Under them, give the answer, or what you did, in at most three lines: "In short" is what the user reads at a glance. Everything else goes under `## In detail`, in plain English, split in two: `### Needs your decision`, one point per decision the user has to make, with the context to make it (the options, what each leads to, which you recommend), and `### For your information`, what they only need to know: explanations, findings, reasons, tests and corrections. Leave out an empty part, and the whole section when there's nothing more to say.
 
 End with these sections, each only when it has something in it:
-- `## Bugs`: bugs you found outside the task, one plain sentence each, with the file and the fix.
+- `## Bugs`: problems you found outside the task, one plain sentence each: what goes wrong and what would fix it, then the file.
 - `## Ideas`: each idea you added to `ideas.md` this turn, one line each starting with 💡, for example "💡 Email signups a PDF of their guide: added to `ideas.md`".
-- `## Branches`: from the session's first edit until it ends, every branch you worked on: what's on it, and whether it's committed, pushed and merged, with the pull request's link. Start each line with its state: 🟡 pull request open, 🟢 merged, or ⚪ for a branch someone else made that has no pull request (say so). A branch with no change since your last report gets one line.
-- `## Commands for you`: each command in the order to run it, saying where: the terminal and folder (for example "Your Mac, in `~/Projects/FollowThroughHQ2`"), or the website page and button (for example GitHub's Settings > Pages). Don't hand the user a command that only looks at something: run it yourself.
+- `## Not on GitHub yet`: any change that's saved on the computer but wasn't sent, and why. Normally empty, because finished changes are sent straight away.
+- `## Steps for you`: what only the user can do, in order, click by click, saying where (the website, the page, the button). If something has to be typed into the terminal, say how to open it and give the exact text to copy.
 - `## Want me to?`: connected work that isn't part of the session's goal, one question per line. Ask each one once.
 
-**Make questions quick to answer.** Each ⏳ line makes the user switch into this session. Where you can, ask a yes/no question, or give lettered options with the one you recommend first ("A (recommended): …, B: …"), so that one word answers it. If the choice is easy to undo and has a sensible default, take the default, say which one you took and why, and don't wait. This never covers steps that are hard to undo or that publish something, such as pushing to `main`.
+**Make questions quick to answer.** Each ⏳ line makes the user switch into this session. Where you can, ask a yes/no question, or give lettered options with the one you recommend first ("A (recommended): …, B: …"), so that one word answers it. If the choice is easy to undo and has a sensible default, take the default, say which one you took and why, and don't wait. This never covers steps that are hard to undo or that publish something, such as putting changes on the live website.

@@ -83,7 +83,7 @@ If research is on and WebSearch is available, run it now. Check which states lic
 
 ## Step 4: Check
 
-Run `node .claude/skills/niche-guide/check.cjs <slug>`. It must print `OK` and exit with code 0. It checks the field counts against roofing, the 7 tips, the row shapes, the style rules and the home-page count, and it also catches syntax errors in the data. Also run `php artisan test`. Then tell the user to run `php artisan serve` and open `http://127.0.0.1:8000/#<slug>` to look at the page.
+Run `node .claude/skills/niche-guide/check.cjs <slug>`. It must print `OK` and exit with code 0. It checks the field counts against roofing, the 7 tips, the row shapes, the style rules and the home-page count, and it also catches syntax errors in the data. Also run `php artisan test`. Then start the preview yourself (`php artisan serve`, in the background) and give the user the link `http://127.0.0.1:8000/#<slug>` to look at the page.
 
 ## Step 5: Report
 
