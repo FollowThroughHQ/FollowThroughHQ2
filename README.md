@@ -6,25 +6,32 @@ A website and small business that helps new US service businesses (HVAC, roofing
 
 ## What's in this repo
 
+A small Laravel app. It serves one page and emails signup-form requests to you. No database.
+
 | Path | What it is |
 |---|---|
-| `index.html` | The entire website (one self-contained file: HTML, CSS and JavaScript) |
+| `resources/views/home.blade.php` | The entire website (one page: HTML, CSS and JavaScript) |
+| `routes/web.php` | Serves the page at `/` |
+| `routes/api.php` | `/api/playbook`: the signup form posts here and the request is emailed to you |
 | `docs/01-business-plan.md` | The idea, offer ladder, validation plan, Europe-to-US logistics, outreach rules |
 | `docs/02-website.md` | How the site is built and how to edit it |
 | `docs/03-content-and-sales.md` | Guide structure, trade list, sales hub, objection method |
 | `docs/04-legal-checklist.md` | Legal pages, placeholders to fill, compliance notes |
-| `docs/05-github-and-hosting.md` | Creating the repo, GitHub Pages hosting, custom domain |
+| `docs/05-github-and-hosting.md` | Creating the repo and custom domain (its GitHub Pages hosting is outdated) |
 | `docs/06-google-sheets-forms.md` | Saving email signups to Google Sheets |
 | `docs/07-roadmap.md` | What to build next, in order |
+| `docs/08-signup-server.md` | Running the app, sending real emails, putting it online |
+
+Everything else (`app/`, `config/`, `public/`...) is standard Laravel.
 
 ## Quick start
 
-1. Open `index.html` in a browser to preview the site locally. No build step.
-2. Replace the placeholders (search the file for `[Your Name]`, `[address]`, `[country]`, `[date]`, `[X years]`, `hello@yourdomain.com`).
-3. Host it with GitHub Pages (see `docs/05-github-and-hosting.md`).
-4. Connect the signup form to Google Sheets (see `docs/06-google-sheets-forms.md`).
+1. Run the site locally (see `docs/08-signup-server.md`): `php artisan serve`, then open `http://127.0.0.1:8000`.
+2. Replace the placeholders (search `resources/views/home.blade.php` for `[Your Name]`, `[address]`, `[country]`, `[date]`, `[X years]`, `hello@yourdomain.com`).
+3. Host it on any PHP host (see `docs/08-signup-server.md`).
+4. To also save signups in a Google Sheet, see `docs/06-google-sheets-forms.md`.
 
 ## Important
 
-- The "Related guides" links use the constant `PUBLIC` in `index.html`. After moving the site to your own domain, change it to your new address.
+- The "Related guides" links use the constant `PUBLIC` in `resources/views/home.blade.php`. After moving the site to your own domain, change it to your new address.
 - Content is general education, not legal, tax or financial advice. Costs and rules are estimates. Verify before publishing.

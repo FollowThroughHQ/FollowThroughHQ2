@@ -1,8 +1,8 @@
-// Usage: node .claude/skills/niche-guide/check.js [slug] [file.html]
-// Checks niche guides in index.html (or file.html) against the roofing guide's depth. No slug = report on all.
+// Usage: node .claude/skills/niche-guide/check.cjs [slug] [file]
+// Checks niche guides in resources/views/home.blade.php (or another view/.html file) against the roofing guide's depth. No slug = report on all.
 const fs = require('fs'), path = require('path');
-const args = process.argv.slice(2), file = args.find(a => a.endsWith('.html'));
-const html = fs.readFileSync(file || path.join(__dirname, '../../../index.html'), 'utf8');
+const args = process.argv.slice(2), file = args.find(a => /\.(html|php)$/.test(a));
+const html = fs.readFileSync(file || path.join(__dirname, '../../../resources/views/home.blade.php'), 'utf8');
 const data = html.slice(html.indexOf('var CONTACT='), html.indexOf('function extra('));
 const { T, FULL, CATS, STEPS } = new Function(data + ';return {T,FULL,CATS,STEPS}')();
 
@@ -27,11 +27,11 @@ function problems(s) {
   if (!/\$\d/.test(f.price || '')) p.push('price has no worked numbers');
   const text = JSON.stringify([t, f]);
   if (text.includes('—')) p.push('em dash used (site style has none)');
-  if (/[<>]/.test(text)) p.push('< or > in text (strings are injected as HTML)');
+  if (/[<>@]|\{\{/.test(text)) p.push('<, >, @ or {{ in text (injected as HTML, page is a Blade view)');
   return p;
 }
 
-const slug = args.find(a => !a.endsWith('.html'));
+const slug = args.find(a => !/\.(html|php)$/.test(a));
 const slugs = slug ? [slug] : T.map(t => t.s);
 let bad = 0;
 for (const s of slugs) {

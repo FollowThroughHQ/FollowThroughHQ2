@@ -1,5 +1,7 @@
 # GitHub and hosting
 
+> Outdated: the site is now a Laravel app, and GitHub Pages can only host static files. See `08-signup-server.md` for hosting. The repository steps below still apply.
+
 ## Create the repository (website method)
 1. Create a free account at github.com and sign in.
 2. Click the **+** at the top right, then **New repository**.

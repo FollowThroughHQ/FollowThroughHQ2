@@ -1,14 +1,14 @@
 ---
 name: niche-guide
-description: Creates a new FollowThrough niche guide (a trade like pressure washing or pest control) at the same depth as the roofing guide, or deepens an existing thin one (HVAC, plumbing...). Interviews the user about the niche first, then writes the matching T and FULL entries into index.html. Use when the user wants to add a niche or trade, expand a guide to roofing's depth, or says /niche-guide.
+description: Creates a new FollowThrough niche guide (a trade like pressure washing or pest control) at the same depth as the roofing guide, or deepens an existing thin one (HVAC, plumbing...). Interviews the user about the niche first, then writes the matching T and FULL entries into resources/views/home.blade.php. Use when the user wants to add a niche or trade, expand a guide to roofing's depth, or says /niche-guide.
 argument-hint: <niche, e.g. "pressure washing">
 ---
 
 # Niche guide
 
-Niche: **$ARGUMENTS**. If empty, ask which niche, and offer the "More trades" list in `docs/07-roadmap.md` plus any existing guide that `check.js` reports as thin.
+Niche: **$ARGUMENTS**. If empty, ask which niche, and offer the "More trades" list in `docs/07-roadmap.md` plus any existing guide that `check.cjs` reports as thin.
 
-Read before writing: the roofing entries in `index.html` (`{s:"roofing"` in `T`, `FULL={roofing:` in `FULL`). They are the gold standard. Also read the style rules in `docs/03-content-and-sales.md`.
+Read before writing: the roofing entries in `resources/views/home.blade.php` (`{s:"roofing"` in `T`, `FULL={roofing:` in `FULL`). They are the gold standard. Also read the style rules in `docs/03-content-and-sales.md`.
 
 ## Why roofing is deep (the bar)
 
@@ -73,7 +73,7 @@ If research is on and WebSearch is available, run it now. Check which states lic
 **Style (the site will break or drift without these):**
 - Plain US English, short sentences, second person. Honest and low-pressure. No income promises. Never suggest anything illegal.
 - Rules vary by state, so say so. Costs are always ranges and always labelled as estimates.
-- Use curly quotes “ ”, the curly apostrophe ’ and the en dash – in ranges. No em dashes. Never put a straight quote that matches the string's delimiter inside the string. No `<` or `>`, because strings are injected as HTML.
+- Use curly quotes “ ”, the curly apostrophe ’ and the en dash – in ranges. No em dashes. Never put a straight quote that matches the string's delimiter inside the string. No `<` or `>`, because strings are injected as HTML. No `@` or `{{`, because the page is a Blade view.
 - Match the quote style of the block you're editing: double quotes in `T` and in the roofing block, single quotes inside `Object.assign`.
 
 **A new niche also needs these:**
@@ -83,7 +83,7 @@ If research is on and WebSearch is available, run it now. Check which states lic
 
 ## Step 4: Check
 
-Run `node .claude/skills/niche-guide/check.js <slug>`. It must print `OK` and exit with code 0. It checks the field counts against roofing, the 7 tips, the row shapes, the style rules and the home-page count, and it also catches syntax errors in the data. Then tell the user to open `index.html` and go to `#<slug>` to look at the page.
+Run `node .claude/skills/niche-guide/check.cjs <slug>`. It must print `OK` and exit with code 0. It checks the field counts against roofing, the 7 tips, the row shapes, the style rules and the home-page count, and it also catches syntax errors in the data. Also run `php artisan test`. Then tell the user to run `php artisan serve` and open `http://127.0.0.1:8000/#<slug>` to look at the page.
 
 ## Step 5: Report
 
