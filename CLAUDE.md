@@ -86,6 +86,8 @@ While the level above says "not checked with him yet", start your first reply wi
 
 Then ask the level question. When he answers, set the level and remove "not checked with him yet".
 
+Before the first change on a computer, check that the project runs there, and fix what's missing yourself, telling him in plain words what you're doing: PHP and Composer (`AGENTS.md` says how to install them), `vendor/` (`composer install`), `.env` (`cp .env.example .env`, then `php artisan key:generate`), `php artisan test` passing, and git able to send to GitHub with his account.
+
 ### Run things yourself
 
 Do everything you can yourself: start the preview (`php artisan serve`, in the background) and give him the link, check that nothing broke, save and send. Ask him only for what only he can do, such as signing in to a website or clicking a button there, as click-by-click steps that say where.
