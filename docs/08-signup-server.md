@@ -2,7 +2,7 @@
 
 The site is a small Laravel app. It serves the page, and it has one other job: the "Send me the playbook" form posts to `/api/playbook`, and the app emails the request to you. You reply to that email with the playbook. No login, no database.
 
-It only ever emails you (`MAIL_TO`), never the address a visitor types, so nobody can use it to spam other people. Each visitor can send 5 requests a minute.
+It only ever emails you (at `MAIL_FROM_ADDRESS`, or `MAIL_TO` if you set it), never the address a visitor types, so nobody can use it to spam other people. Each visitor can send 5 requests a minute.
 
 ## Try it on your Mac
 
@@ -24,23 +24,21 @@ Open `http://127.0.0.1:8000` and submit the form. While `MAIL_MAILER=log`, the e
 
 ## Send real emails
 
-Sign up with an SMTP provider, verify the sender address it asks for, then fill in `.env`:
+Emails go out through Brevo (free: 300 a day). Brevo's server and port are already set in `.env`. Fill in the rest:
+
+1. In Brevo, add and verify the address you send from (Senders, Domains & Dedicated IPs > Senders).
+2. In Brevo, open Settings > SMTP & API > SMTP. Copy the SMTP login and generate an SMTP key.
+3. In `.env`:
 
 ```ini
 MAIL_MAILER=smtp
-MAIL_HOST=smtp-relay.brevo.com
-MAIL_PORT=587
-MAIL_USERNAME=your-smtp-login
-MAIL_PASSWORD=your-smtp-key
-MAIL_FROM_ADDRESS="hello@yourdomain.com"   # must be a sender your provider has verified
-MAIL_TO="you@yourdomain.com"               # your inbox
+MAIL_USERNAME=your-brevo-smtp-login
+MAIL_PASSWORD=your-brevo-smtp-key
+MAIL_FROM_ADDRESS="peter@followthroughguides.com"   # the sender you verified in step 1
+MAIL_TO=                                             # optional: another inbox for signups
 ```
 
-| Provider | MAIL_HOST | MAIL_PORT | MAIL_USERNAME / MAIL_PASSWORD |
-|---|---|---|---|
-| Brevo | `smtp-relay.brevo.com` | 587 | SMTP login and SMTP key (Settings > SMTP & API) |
-| Mailjet | `in-v3.mailjet.com` | 587 | API key and secret key |
-| SMTP2GO | `mail.smtp2go.com` | 2525 | An SMTP user you create in the dashboard, and its password |
+Restart `php artisan serve` after changing `.env`.
 
 ## Put it online
 
