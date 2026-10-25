@@ -1,5 +1,5 @@
 # Usage: python3 .claude/skills/test-site/check.py [base-url] [path ...] [--compare]
-# Opens each page in headless Chrome at phone width (375px) and, on every hash page: clicks every link and
+# Opens each page in headless Chrome at phone width (375px) and, on every page (/, /roofing...): clicks every link and
 # checks it lands on a real page with no JavaScript errors; checks nothing runs off the side, text is readable
 # in light and dark mode, no placeholder text is left, and each page has a title and a main heading. Tests the
 # objection tabs, a step checkmark across a reload, and the signup form (a real test signup goes only to a
@@ -26,12 +26,12 @@ compare = '--compare' in args or not local
 SPY = '''<script>window.__ftErr=[];window.addEventListener("error",function(e){__ftErr.push(String(e.message))});
 var __ce=console.error;console.error=function(){__ftErr.push([].join.call(arguments," "));__ce.apply(console,arguments)};var __ftCfg=%s</script>'''
 
-# Runs after it: walks every hash page, clicks each link on it and records what the click led to, measures each
+# Runs after it: walks every page, clicks each link on it and records what the click led to, measures each
 # page, tests the objection tabs, ticks a step and reloads the page, then (after the reload) tests the signup form.
 CRAWL = r'''<script>(function(){
 var S=sessionStorage,saved=S.getItem("__ft"),app=document.getElementById("app"),root=document.documentElement;
-var known={home:1,guides:1,"home-contact":1,demo:1},jump={"home-contact":"signup",demo:"demo"};T.forEach(function(t){known[t.s]=1});Object.keys(LEGAL).forEach(function(k){known[k]=1});
-function title(id){var t=T.find(function(x){return x.s===id});return t?t.n+" start-up guide | FollowThrough":LEGAL[id]?LEGAL[id][0]+" | FollowThrough":id==="guides"?"Start-up guides | FollowThrough":"FollowThrough: start and sell a service business"}
+var known={home:1,guides:1,calculator:1},jump={"home-contact":"signup",signup:"signup",demo:"demo"};T.forEach(function(t){known[t.s]=1});Object.keys(LEGAL).forEach(function(k){known[k]=1});
+function title(id){var t=T.find(function(x){return x.s===id});return t?t.n+" start-up guide | FollowThrough":LEGAL[id]?LEGAL[id][0]+" | FollowThrough":id==="guides"?"Start-up guides | FollowThrough":id==="calculator"?"Lost quotes calculator | FollowThrough":"FollowThrough: start and sell a service business"}
 function errs(){return __ftErr.splice(0)}
 function done(e){return /\bdone\b/.test(e.className)}
 function finish(out){out.errors2=errs();parent.postMessage(JSON.stringify(out).replace(/</g,"\\u003c"),"*")}
@@ -54,14 +54,14 @@ function measure(){var p={title:document.title,h1:app.querySelectorAll("h1").len
   text:[].map.call(document.body.children,function(e){return e.tagName==="SCRIPT"?"":e.textContent}).concat([].map.call(document.querySelectorAll("[href]"),function(e){return e.getAttribute("href")})).join(" "),
   noalt:[].filter.call(document.querySelectorAll("img"),function(i){return !i.hasAttribute("alt")}).map(function(i){return i.getAttribute("src")})};
   ["light","dark"].forEach(function(m){root.setAttribute("data-theme",m);p.faint[m]=faint()});root.removeAttribute("data-theme");return p}
-function visit(h){go(h);var p=jump[h.slice(1)]?{}:measure();p.errors=errs();return p}
-function tabs(out){var p=out.tabs=[],b;go("#home");b=document.querySelectorAll("#tabs button");out.tabn=b.length;
+function visit(h){go(h);var p=measure();p.errors=errs();return p}
+function tabs(out){var p=out.tabs=[],b;go("/");b=document.querySelectorAll("#tabs button");out.tabn=b.length;
   if(!b.length||b.length!==OBJ.length)p.push("found "+b.length+" objection tabs, expected "+OBJ.length);
   for(var i=b.length-1;i>=0;i--){b[i].click();var on=[].filter.call(b,function(y){return y.getAttribute("aria-selected")==="true"});
     if(on.length!==1||on[0]!==b[i])p.push("clicking the \""+b[i].textContent+"\" tab doesn't select it");
     if(document.getElementById("q").textContent!==OBJ[i][1]||document.getElementById("a").textContent!==OBJ[i][2])p.push("clicking the \""+b[i].textContent+"\" tab doesn't show its objection")}
   var e=errs();if(e.length)p.push("JavaScript error: "+e.join("; "))}
-function signup(out){var p=out.signup=[];go("#home-contact");
+function signup(out){var p=out.signup=[];go("/#signup");
   var f=document.getElementById("f"),em=document.getElementById("em"),ok=document.getElementById("ok"),st=document.getElementById("fs"),b=f&&f.querySelector("button");
   if(!b||!em||!ok){p.push("the signup form is missing");return finish(out)}
   var sent=0,of=window.fetch;window.fetch=function(){sent++;return of.apply(window,arguments)};
@@ -72,35 +72,37 @@ function signup(out){var p=out.signup=[];go("#home-contact");
   var n=0;(function wait(){if(/^Thanks!/.test(st.textContent)&&f.style.display==="none")return finish(out);
     if(++n>50){p.push("after sending, the visitor sees \""+st.textContent+"\" instead of the thank-you message");return finish(out)}setTimeout(wait,100)})()}
 if(saved){var out=JSON.parse(saved),s0=document.getElementById("st0");S.removeItem("__ft");out.load=out.load.concat(errs());
-  if(location.hash!=="#"+out.step||!s0)out.steps.push("after a reload the #"+out.step+" guide doesn't open");
-  else if(!done(s0)||!/^1 of /.test(document.getElementById("prog").textContent))out.steps.push("step 1 on #"+out.step+" is no longer ticked after reloading the page");
-  else{s0.querySelector(".chk").click();if(done(s0)||get(out.step).length)out.steps.push("unticking step 1 on #"+out.step+" doesn't clear it")}
+  if(document.title!==title(out.step)||!s0)out.steps.push("after a reload the /"+out.step+" guide doesn't open");
+  else if(!done(s0)||!/^1 of /.test(document.getElementById("prog").textContent))out.steps.push("step 1 on /"+out.step+" is no longer ticked after reloading the page");
+  else{s0.querySelector(".chk").click();if(done(s0)||get(out.step).length)out.steps.push("unticking step 1 on /"+out.step+" doesn't clear it")}
   return signup(out)}
 // Chrome ignores address changes after about 200 in 10 seconds, so the site's click handler doesn't get to make them.
-var rs=history.replaceState;history.replaceState=function(){};
-var out={load:errs(),pages:{},clicks:[],other:[],steps:[]},queue=["#home"],seen={"#home":1};
+var rs=history.replaceState;history.replaceState=history.pushState=function(){};
+var out={load:errs(),pages:{},clicks:[],other:[],steps:[]},queue=["/"],seen={"/":1};
 while(queue.length){var h=queue.shift();out.pages[h]=visit(h);
   var n=document.querySelectorAll("a").length;
   for(var i=0;i<n;i++){go(h);errs();var a=document.querySelectorAll("a")[i];if(!a)break;
     var href=a.getAttribute("href")||"",text=(a.innerText||a.getAttribute("aria-label")||"").trim().slice(0,60);
-    if(href.charAt(0)!=="#"){out.other.push({page:h,href:href,text:text});continue}
-    var id=href.slice(1),r={page:h,href:href,text:text,problems:[]};
+    if(href.charAt(0)!=="/"&&href.charAt(0)!=="#"||/^\/(\/|api\/)/.test(href)){out.other.push({page:h,href:href,text:text});continue}
+    var u=href.split("#"),id=u[0].slice(1)||"home",j=u[1],to=j&&jump[j],r={page:h,href:href,text:text,problems:[]};
+    if(href.charAt(0)==="#"){r.problems.push("it uses an old #address; link to /"+(u[1]||"")+" instead");out.clicks.push(r);continue}
+    if(j&&!to)r.problems.push("there is no #"+j+" section to jump to");
     if(a.target){if(!known[id])r.problems.push("it opens a new tab on \""+id+"\", which isn't a page");out.clicks.push(r);continue}
     try{a.click()}catch(x){r.problems.push("click threw: "+x.message)}
     var e=errs();if(e.length)r.problems.push("JavaScript error: "+e.join("; "));
-    if(!known[id])r.problems.push("no page called \""+id+"\": the click re-renders the home page and jumps to the top"+(document.getElementById(id)?" instead of scrolling to the #"+id+" section":""));
-    else{var want=title(jump[id]?"home":id);
+    if(!known[id])r.problems.push("no page called \""+id+"\": the click shows the home page instead");
+    else{var want=title(id);
       if(document.title!==want)r.problems.push("title is \""+document.title+"\", expected \""+want+"\"");
       if(app.innerText.trim().length<200)r.problems.push("page is nearly empty");
-      var to=jump[id]&&document.getElementById(jump[id]);
-      if(jump[id]&&!to)r.problems.push("the #"+jump[id]+" section is missing");
-      else if(to&&Math.abs(to.getBoundingClientRect().top)>2&&scrollY+innerHeight<root.scrollHeight-2)r.problems.push("it doesn't scroll to the #"+jump[id]+" section (it stays "+Math.round(to.getBoundingClientRect().top)+"px down the page)");
-      if(!seen[href]){seen[href]=1;queue.push(href)}}
+      var e2=to&&document.getElementById(to);
+      if(to&&!e2)r.problems.push("the #"+to+" section is missing");
+      else if(e2&&Math.abs(e2.getBoundingClientRect().top)>2&&scrollY+innerHeight<root.scrollHeight-2)r.problems.push("it doesn't scroll to the #"+to+" section (it stays "+Math.round(e2.getBoundingClientRect().top)+"px down the page)");
+      if(!seen[u[0]]){seen[u[0]]=1;queue.push(u[0])}}
     out.clicks.push(r)}}
 tabs(out);
-var t=T[0],c;out.step=t.s;go("#"+t.s);c=document.querySelector('.chk[data-i="0"]');
-if(!c)out.steps.push("no step checkmark on #"+t.s);
-else{c.click();if(!done(document.getElementById("st0"))||!/^1 of /.test(document.getElementById("prog").textContent))out.steps.push("ticking step 1 on #"+t.s+" doesn't mark it done")}
+var t=T[0],c;out.step=t.s;go("/"+t.s);c=document.querySelector('.chk[data-i="0"]');
+if(!c)out.steps.push("no step checkmark on /"+t.s);
+else{c.click();if(!done(document.getElementById("st0"))||!/^1 of /.test(document.getElementById("prog").textContent))out.steps.push("ticking step 1 on /"+t.s+" doesn't mark it done")}
 out.steps=out.steps.concat(errs().map(function(x){return "JavaScript error: "+x}));
 rs.call(history,null,"","#"+t.s);S.setItem("__ft",JSON.stringify(out));location.reload()})()</script>'''
 
@@ -168,8 +170,10 @@ def screenshots(html, pages, prefix):
         open(os.path.join(tmp, 'page.html'), 'w').write(html)
 
         def shot(h):
-            png, height = os.path.join(SHOTS, prefix + h[1:] + '.png'), min(pages[h]['height'], 16000)
-            chrome(tmp, h, height, '--virtual-time-budget=3000', '--screenshot=' + png)
+            # The page runs from a file, so it opens a page from its old #address.
+            name = h.strip('/') or 'home'
+            png, height = os.path.join(SHOTS, prefix + name + '.png'), min(pages[h]['height'], 16000)
+            chrome(tmp, '#' + name, height, '--virtual-time-budget=3000', '--screenshot=' + png)
             subprocess.run(['sips', '-c', str(height), '375', png], capture_output=True)
         with concurrent.futures.ThreadPoolExecutor(4) as pool:
             list(pool.map(shot, [h for h in pages if 'height' in pages[h]]))
@@ -224,7 +228,7 @@ try:
         if f.endswith('.png'):
             os.remove(os.path.join(SHOTS, f))
     for path in paths:
-        url = base + path
+        url, at = base + path, path.rstrip('/')
         status, html = fetch(url)
         if status != 200:
             fails.append('%s does not load (%s)' % (url, status or html))
@@ -251,12 +255,12 @@ try:
         titles, wide, faint, left, noalt = {}, {}, {}, {}, {}
         for h, p in pages.items():
             if p['errors']:
-                fails.append('%s%s: JavaScript error: %s' % (url, h, '; '.join(p['errors'])))
+                fails.append('%s%s: JavaScript error: %s' % (url.rstrip('/'), h, '; '.join(p['errors'])))
             if 'title' not in p:
                 continue
             titles.setdefault(p['title'], []).append(h)
             if p['h1'] != 1:
-                warns.append('%s%s: %s main heading (h1), expected 1' % (path, h, p['h1'] or 'no'))
+                warns.append('%s%s: %s main heading (h1), expected 1' % (at, h, p['h1'] or 'no'))
             for src in p['noalt']:
                 noalt.setdefault(src, []).append(h)
             for w in p['wide']:
@@ -280,12 +284,15 @@ try:
             fails.append('%s placeholder %s still on %s' % (path, ph, ', '.join(on)))
         broken = {}
         for c in r['clicks']:
+            # A page that opens when clicked must also open when its address is typed in or shared.
+            if c['href'].startswith('/'):
+                external.setdefault(urllib.parse.urljoin(url, c['href'].split('#')[0]), set()).add(at + c['page'])
             for p in c['problems']:
                 broken.setdefault((c['href'], c['text'], p), []).append(c['page'])
         for (href, text, p), on in broken.items():
             fails.append('%s link "%s" (%s), on %d page(s) e.g. %s: %s' % (path, text, href, len(set(on)), on[0], p))
         for p in r['tabs']:
-            fails.append('%s#home objection tabs: %s' % (path, p))
+            fails.append('%s objection tabs on the home page: %s' % (path, p))
         for p in r['steps']:
             fails.append('%s step checkmarks: %s' % (path, p))
         for p in r['signup']:
@@ -295,11 +302,11 @@ try:
             if href.startswith('mailto:'):
                 addr = href[7:].split('?')[0]
                 if not re.fullmatch(r'[^@\s]+@[^@\s]+\.[a-z]{2,}', addr):
-                    fails.append('%s%s: mailto link "%s" has a bad address: %s' % (path, o['page'], o['text'], addr))
+                    fails.append('%s%s: mailto link "%s" has a bad address: %s' % (at, o['page'], o['text'], addr))
             elif href.startswith(('tel:', 'javascript:')) or not href:
-                warns.append('%s%s: link "%s" has href "%s"' % (path, o['page'], o['text'], href))
+                warns.append('%s%s: link "%s" has href "%s"' % (at, o['page'], o['text'], href))
             else:
-                external.setdefault(urllib.parse.urljoin(url, href), set()).add(path + o['page'])
+                external.setdefault(urllib.parse.urljoin(url, href), set()).add(at + o['page'])
         screenshots(html, pages, path.strip('/').replace('/', '-') + '-' if path != '/' else '')
         sent += not r.get('unsent') and not r['signup']
         print('%s: %d pages, %d link clicks, %d objection tabs, test signup %s' % (url, len(pages), len(r['clicks']), r['tabn'],

@@ -4,20 +4,21 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-FollowThrough: a website (plus business docs) selling start-up guides to new US service businesses. It is a small Laravel 13 app with no login and no database (sessions and cache on files, queue sync). The entire site is one page, `resources/views/home.blade.php` — HTML, CSS and vanilla JS, served at `/` by `routes/web.php`. The view contains no Blade syntax on purpose (`tests/Feature/HomeTest.php` checks it renders byte-for-byte); keep `{{` and `@word` out of it. The only other route is the signup endpoint in `routes/api.php`.
+FollowThrough: a website (plus business docs) selling start-up guides to new US service businesses. It is a small Laravel 13 app with no login and no database (sessions and cache on files, queue sync). The entire site is one page, `resources/views/home.blade.php` — HTML, CSS and vanilla JS, served by `routes/web.php` at `/` and at each page's own address (`/roofing`, `/sales`...), plus `/sitemap.xml` for search engines. The view contains no Blade syntax on purpose (`tests/Feature/HomeTest.php` checks it renders byte-for-byte); keep `{{` and `@word` out of it. The only other route is the signup endpoint in `routes/api.php`.
 
 **Run/preview:** `php artisan serve`, then `http://127.0.0.1:8000`. **Test:** `php artisan test`. First-time setup is in `docs/08-signup-server.md`.
 
 ## Architecture of the page
 
-Pages are rendered client-side from data arrays and switched with URL hash routes (`#home`, `#guides`, `#sales`, `#roofing` and other trade slugs, `#about`, `#privacy`...). `go()` handles `hashchange`, `render()` dispatches to a page builder, page builders assemble HTML strings from the data arrays near the top of the script:
+Pages are rendered client-side from data arrays, each at its own path (`/`, `/guides`, `/sales`, `/calculator`, `/roofing` and other trade slugs, `/about`, `/privacy`...), switched with `history.pushState`. `routes/web.php` serves the same view at every path: trade slugs are read from `T` in the view, other pages are listed there (a new non-trade page needs adding to that list; `HomeTest` fails if a linked page has no route). Old hash links (`#roofing`, `#home-contact`) still work and move to the path. `go()` handles clicks and `popstate`, `render()` dispatches to a page builder, page builders assemble HTML strings from the data arrays near the top of the script:
 
 - `CATS` — the three trade categories.
 - `STEPS` — seven start-up steps shared by every guide; edit once, changes everywhere.
 - `T` — one entry per trade (slug, name, category index, cost/season/fit/spend, seven tips).
 - `FULL` — per-slug deep-dive content (licensing, cost table, 90-day plan, objections, FAQ, tools).
 - `OBJ`, `LEGAL` — home-page objections; legal/About/Sales pages (shared renderer).
-- `CONTACT`, `PUBLIC` — contact email and the site's public URL. `PUBLIC` is the base for "Related guides" links and currently points at a claude.ai artifact URL — it must change when the site moves to its own domain.
+- `EX` — the made-up example stories in the home page's "How it plays out" section. Replace them with real ones (with permission) as owners share them; never present invented ones as real.
+- `CONTACT` — contact email.
 - `FORM_URL` — where the signup form posts: `/api/playbook` on the same app (`routes/api.php`), which emails the request to `MAIL_TO` (empty = `MAIL_FROM_ADDRESS`) through Brevo SMTP. Settings live in `.env` (git-ignored); setup in `docs/08-signup-server.md`.
 
 **Adding a trade:** add an entry to `T` and a matching one to `FULL` under the same slug; tiles, guide page and related links appear automatically (details in `docs/02-website.md`).
@@ -26,7 +27,7 @@ Step-completion checkmarks persist in the visitor's `localStorage` under `ft:<sl
 
 ## Docs
 
-`docs/01` business plan · `02` website architecture and how to edit · `03` content and sales structure · `04` legal checklist · `05` GitHub repo (its Pages hosting is outdated) · `06` Google Sheets signup integration · `07` roadmap · `08` running the app, signup emails, hosting. Read `02-website.md` before changing the site; content work should follow the structures in `03`.
+`docs/01` business plan · `02` website architecture and how to edit · `03` content and sales structure · `04` legal checklist · `05` GitHub repo (its Pages hosting is outdated) · `06` Google Sheets signup integration · `07` roadmap · `08` running the app, signup emails, hosting · `09` value propositions. Read `02-website.md` before changing the site; content work should follow the structures in `03`.
 
 ## Current gaps (deliberate, see docs)
 

@@ -48,7 +48,7 @@ function wireSignup(label) {
       email: document.getElementById("em").value,
       trade: label,
       consent: "yes " + new Date().toISOString(),
-      page: location.hash || "#home",
+      page: location.pathname,
       hp: ""
     });
     fetch(SHEET_URL, { method: "POST", mode: "no-cors", body: body })

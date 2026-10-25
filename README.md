@@ -33,5 +33,4 @@ Everything else (`app/`, `config/`, `public/`...) is standard Laravel.
 
 ## Important
 
-- The "Related guides" links use the constant `PUBLIC` in `resources/views/home.blade.php`. After moving the site to your own domain, change it to your new address.
 - Content is general education, not legal, tax or financial advice. Costs and rules are estimates. Verify before publishing.

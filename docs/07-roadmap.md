@@ -9,8 +9,7 @@
 ## Next
 - Expand HVAC and one more trade to roofing's depth.
 - State-by-state licensing summaries for the biggest states, starting with roofing and HVAC.
-- Quote-follow-up calculator: "20 quotes a month x 30% close x $1,500 average job; what does 10% better closing add?"
-- Testimonials once the first users give feedback.
+- Testimonials once the first users give feedback. The home page already asks visitors for their stories; swap them in for the made-up examples in `EX`.
 - Short email sequence (3-5 emails) after signup.
 
 ## Later
