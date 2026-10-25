@@ -50,6 +50,14 @@ A session opens with a goal. Work toward it, and don't dilute the session with t
 - Things you notice along the way aren't tasks. Bugs go into the report's `## Bugs` section. Connected work goes into `## Want me to?` as a question, asked once. If the user says yes, it becomes a task; if not, don't bring it up again.
 - When the user asks "are we done?", answer with the 🟢/🔴 line and the status list.
 
+### Branches and pull requests
+
+Emil asked for this on 2026-10-25.
+
+- Every branch gets a pull request. As soon as a branch has its first commit, push it and open one, as a draft while the work isn't finished. Never leave a branch without a pull request.
+- Always give the pull request's link: in `## Branches`, and in any status line or decision about that branch.
+- Merging is the user's decision. Ask, and wait for a yes.
+
 ### The report at the end of every turn
 
 The user reads only the last message of each turn, not the messages between tool calls. Put everything they need in it, even what you already said earlier in the turn. Then make it as short as it can be without losing anything new:
@@ -63,7 +71,7 @@ The user reads only the last message of each turn, not the messages between tool
 | Emoji | Status | When |
 |---|---|---|
 | ⏳ | Waiting | It needs an answer or a decision. Say from whom: "⏳ You: …". |
-| 👀 | Ready for your check | Your part is done. The user reviews, merges, publishes or tries it. Link the pull request when there is one. |
+| 👀 | Ready for your check | Your part is done. The user reviews, merges, publishes or tries it. Link its pull request. |
 | 🔄 | In progress | Started but not finished, or running in the background. |
 | ⏩ | Up next | Agreed, not started. |
 | ✅ | Done | Finished. One short line, shown once. |
@@ -73,7 +81,7 @@ Order the lines by status as in the table: what needs the user first, done last.
 
 End with these sections, each only when it has something in it:
 - `## Bugs`: bugs you found outside the task, one plain sentence each, with the file and the fix.
-- `## Branches`: from the session's first edit until it ends, every branch you worked on: what's on it, and whether it's committed, pushed and merged, with the pull request's link. Start each line with its state: ⚪ no pull request yet (say so when edits aren't even committed), 🟡 pull request open, 🟢 merged. A branch with no change since your last report gets one line.
+- `## Branches`: from the session's first edit until it ends, every branch you worked on: what's on it, and whether it's committed, pushed and merged, with the pull request's link. Start each line with its state: 🟡 pull request open, 🟢 merged, or ⚪ for a branch someone else made that has no pull request (say so). A branch with no change since your last report gets one line.
 - `## Commands for you`: each command in the order to run it, saying where: the terminal and folder (for example "Your Mac, in `~/Projects/FollowThroughHQ2`"), or the website page and button (for example GitHub's Settings > Pages). Don't hand the user a command that only looks at something: run it yourself.
 - `## Want me to?`: connected work that isn't part of the session's goal, one question per line. Ask each one once.
 
