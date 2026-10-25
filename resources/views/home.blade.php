@@ -137,7 +137,7 @@ app.innerHTML=h;
 if(t){paint(t);app.querySelectorAll(".chk").forEach(function(b){b.onclick=function(){var i=+b.dataset.i,k=done.indexOf(i);k>-1?done.splice(k,1):done.push(i);put(t.s,done);paint(t)}});wireSignup(t.n)}
 else if(id==="home"){wireSignup("trade");var tb=document.getElementById("tabs");var sh=function(i){[].forEach.call(tb.children,function(b,k){b.setAttribute("aria-selected",k===i)});document.getElementById("q").textContent=OBJ[i][1];document.getElementById("a").textContent=OBJ[i][2]};OBJ.forEach(function(o,i){var b=document.createElement("button");b.type="button";b.textContent=o[0];b.onclick=function(){sh(i)};tb.appendChild(b)});sh(0)}
 document.title=(t?t.n+" start-up guide":LEGAL[id]?LEGAL[id][0]:"FollowThrough")+" | FollowThrough"}
-function go(h){var id=(h||"").replace("#","")||"home";if(id==="home-contact"){render("home");var s=document.getElementById("signup");if(s)s.scrollIntoView();return}render(id);window.scrollTo(0,0)}
+function go(h){var id=(h||"").replace("#","")||"home";if(id==="home-contact"||id==="demo"){render("home");var s=document.getElementById(id==="demo"?"demo":"signup");if(s)s.scrollIntoView();return}render(id);window.scrollTo(0,0)}
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(a&&!a.target){e.preventDefault();try{history.replaceState(null,"",a.getAttribute("href"))}catch(x){}go(a.getAttribute("href"))}});
 window.addEventListener("hashchange",function(){go(location.hash)});
 go(location.hash);
