@@ -15,7 +15,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.a
 SHOTS = os.path.join(ROOT, 'storage', 'app', 'site-check')
 # The list in docs/02-website.md.
 PLACEHOLDERS = ['[Your Name]', '[Your Name / Company]', '[address]', '[country]', '[country/state]', '[date]',
-                '[X years]', '[industries / roles]', 'hello@yourdomain.com']
+                '[X years]', '[industries / roles]', '[One sentence', 'Add a photo', 'hello@yourdomain.com']
 args = sys.argv[1:]
 base = args[0].rstrip('/') if args and args[0].startswith('http') else 'http://127.0.0.1:8000'
 paths = [a for a in args if a.startswith('/')] or ['/']
@@ -31,7 +31,7 @@ var __ce=console.error;console.error=function(){__ftErr.push([].join.call(argume
 CRAWL = r'''<script>(function(){
 var S=sessionStorage,saved=S.getItem("__ft"),app=document.getElementById("app"),root=document.documentElement;
 var known={home:1,guides:1,"home-contact":1,demo:1},jump={"home-contact":"signup",demo:"demo"};T.forEach(function(t){known[t.s]=1});Object.keys(LEGAL).forEach(function(k){known[k]=1});
-function title(id){var t=T.find(function(x){return x.s===id});return (t?t.n+" start-up guide":LEGAL[id]?LEGAL[id][0]:"FollowThrough")+" | FollowThrough"}
+function title(id){var t=T.find(function(x){return x.s===id});return t?t.n+" start-up guide | FollowThrough":LEGAL[id]?LEGAL[id][0]+" | FollowThrough":id==="guides"?"Start-up guides | FollowThrough":"FollowThrough: start and sell a service business"}
 function errs(){return __ftErr.splice(0)}
 function done(e){return /\bdone\b/.test(e.className)}
 function finish(out){out.errors2=errs();parent.postMessage(JSON.stringify(out).replace(/</g,"\\u003c"),"*")}

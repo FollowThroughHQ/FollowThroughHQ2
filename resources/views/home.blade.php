@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>FollowThrough: start and sell a service business</title>
+<meta name="description" content="Free step-by-step start-up guides for US service trades, plus sales scripts and objection answers that turn quote requests into booked jobs.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -121,7 +122,7 @@ h+='<section><h2>What you’ll find here</h2><div class="cols"><div class="col">
 h+='<section id="demo"><h2>A sample objection handler</h2><p>Pick a trade.</p><div class="demo"><div class="tabs" id="tabs"></div><div class="card" aria-live="polite"><div class="q" id="q"></div><p class="a" id="a"></p></div></div></section>';
 h+='<section><h2>Start-up guides by trade</h2>'+CATS.map(function(c,i){return '<div class="cat"><h3>'+c+'</h3>'+tiles(T.filter(function(t){return t.c===i}))+'</div>'}).join("")+'</section><div id="home-contact">'+signup("trade")+'</div>';
 return h}
-function guides(){return '<section><h2>Start-up guides</h2><p>Pick your trade for costs, busy season and a step-by-step checklist.</p>'+CATS.map(function(c,i){return '<div class="cat"><h3>'+c+'</h3>'+tiles(T.filter(function(t){return t.c===i}))+'</div>'}).join("")+'</section>'}
+function guides(){return '<section><h1>Start-up guides</h1><p>Pick your trade for costs, busy season and a step-by-step checklist.</p>'+CATS.map(function(c,i){return '<div class="cat"><h3>'+c+'</h3>'+tiles(T.filter(function(t){return t.c===i}))+'</div>'}).join("")+'</section>'}
 function guide(t){
 done=get(t.s);
 var h='<section><div class="crumbs"><a href="#guides">Guides</a> / '+CATS[t.c]+'</div><h1>How to start a '+t.n+' business</h1><div class="facts"><div class="fact"><h3>Start-up cost</h3><p>'+t.cost+'</p></div><div class="fact"><h3>Busy season</h3><p>'+t.season+'</p></div><div class="fact"><h3>Is it a good fit?</h3><p>'+t.fit+'</p></div><div class="fact"><h3>Where the money goes</h3><p>'+t.spend+'</p></div></div><p style="font-size:.9rem;color:var(--muted)">Costs are rough estimates. Rules vary by state. See the <a href="#disclaimer">disclaimer</a>.</p><h2>Step by step</h2><div class="prog" id="prog"></div><div class="bar"><i id="bar"></i></div><div style="height:16px"></div>';
@@ -136,7 +137,7 @@ else if(id==="guides")h=guides();else if(t)h=guide(t);else{h=home();id="home"}
 app.innerHTML=h;
 if(t){paint(t);app.querySelectorAll(".chk").forEach(function(b){b.onclick=function(){var i=+b.dataset.i,k=done.indexOf(i);k>-1?done.splice(k,1):done.push(i);put(t.s,done);paint(t)}});wireSignup(t.n)}
 else if(id==="home"){wireSignup("trade");var tb=document.getElementById("tabs");var sh=function(i){[].forEach.call(tb.children,function(b,k){b.setAttribute("aria-selected",k===i)});document.getElementById("q").textContent=OBJ[i][1];document.getElementById("a").textContent=OBJ[i][2]};OBJ.forEach(function(o,i){var b=document.createElement("button");b.type="button";b.textContent=o[0];b.onclick=function(){sh(i)};tb.appendChild(b)});sh(0)}
-document.title=(t?t.n+" start-up guide":LEGAL[id]?LEGAL[id][0]:"FollowThrough")+" | FollowThrough"}
+document.title=t?t.n+" start-up guide | FollowThrough":LEGAL[id]?LEGAL[id][0]+" | FollowThrough":id==="guides"?"Start-up guides | FollowThrough":"FollowThrough: start and sell a service business"}
 function go(h){var id=(h||"").replace("#","")||"home";if(id==="home-contact"||id==="demo"){render("home");var s=document.getElementById(id==="demo"?"demo":"signup");if(s)s.scrollIntoView();return}render(id);window.scrollTo(0,0)}
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(a&&!a.target){e.preventDefault();try{history.replaceState(null,"",a.getAttribute("href"))}catch(x){}go(a.getAttribute("href"))}});
 window.addEventListener("hashchange",function(){go(location.hash)});
