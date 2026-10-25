@@ -1,12 +1,12 @@
 ---
 name: test-site
-description: Tests the FollowThrough website end to end. Opens the site in headless Chrome, clicks every link on every page (home, guides, each trade, sales, about, legal) and checks it lands on a real page without JavaScript errors, then fetches every external link, mailto and resource. Runs against / and /v2 locally, or any URL such as the live site. Use when the user wants to test the site, check for broken links, check it before publishing or after an edit, or says /test-site.
-argument-hint: [base URL, default http://127.0.0.1:8000] [paths, default / /v2]
+description: Tests the FollowThrough website end to end. Opens the site in headless Chrome, clicks every link on every page (home, guides, each trade, sales, about, legal) and checks it lands on a real page without JavaScript errors, then fetches every external link, mailto and resource. Runs against / locally, or any URL such as the live site. Use when the user wants to test the site, check for broken links, check it before publishing or after an edit, or says /test-site.
+argument-hint: [base URL, default http://127.0.0.1:8000] [paths, default /]
 ---
 
 # Test the site
 
-Target: **$ARGUMENTS**. If empty, test the local app at `http://127.0.0.1:8000`, paths `/` and `/v2`.
+Target: **$ARGUMENTS**. If empty, test the local app at `http://127.0.0.1:8000`, path `/`.
 
 ## Step 1: Make sure the site is up
 

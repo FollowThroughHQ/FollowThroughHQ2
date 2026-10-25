@@ -11,7 +11,7 @@ A small Laravel app. It serves one page and emails signup-form requests to you. 
 | Path | What it is |
 |---|---|
 | `resources/views/home.blade.php` | The entire website (one page: HTML, CSS and JavaScript) |
-| `routes/web.php` | Serves the page at `/`, and at `/v2` a comparison copy with every guide deepened by the niche-guide skill (`home-v2.blade.php`) |
+| `routes/web.php` | Serves the page at `/` |
 | `routes/api.php` | `/api/playbook`: the signup form posts here and the request is emailed to you |
 | `docs/01-business-plan.md` | The idea, offer ladder, validation plan, Europe-to-US logistics, outreach rules |
 | `docs/02-website.md` | How the site is built and how to edit it |

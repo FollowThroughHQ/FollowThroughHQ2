@@ -1,13 +1,13 @@
 # Usage: python3 .claude/skills/test-site/check.py [base-url] [path ...]
 # Opens each page in headless Chrome, clicks every link on every hash page, and checks that each
 # one lands on a real page with no JavaScript errors. Also fetches every server path, external link
-# and resource the page loads. Default: http://127.0.0.1:8000, paths / and /v2. Exit 1 on any failure.
+# and resource the page loads. Default: http://127.0.0.1:8000, path /. Exit 1 on any failure.
 import json, os, re, subprocess, sys, tempfile, urllib.error, urllib.parse, urllib.request
 
 CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 args = sys.argv[1:]
 base = args[0].rstrip('/') if args and args[0].startswith('http') else 'http://127.0.0.1:8000'
-paths = [a for a in args if a.startswith('/')] or ['/', '/v2']
+paths = [a for a in args if a.startswith('/')] or ['/']
 
 # Runs before the page's own script: collects JavaScript errors.
 SPY = '''<script>window.__ftErr=[];window.addEventListener("error",function(e){__ftErr.push(String(e.message))});

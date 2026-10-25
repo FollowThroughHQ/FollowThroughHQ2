@@ -6,12 +6,10 @@ use Tests\TestCase;
 
 class HomeTest extends TestCase
 {
-    // The pages are plain HTML in Blade views; Blade must pass them through untouched.
-    public function test_pages_are_served_unchanged(): void
+    // The page is plain HTML in a Blade view; Blade must pass it through untouched.
+    public function test_page_is_served_unchanged(): void
     {
-        foreach (['/' => 'home', '/v2' => 'home-v2'] as $url => $view) {
-            $this->get($url)->assertOk();
-            $this->assertSame(file_get_contents(resource_path("views/$view.blade.php")), $this->get($url)->getContent());
-        }
+        $this->get('/')->assertOk();
+        $this->assertSame(file_get_contents(resource_path('views/home.blade.php')), $this->get('/')->getContent());
     }
 }

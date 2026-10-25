@@ -32,7 +32,7 @@ Step-completion checkmarks persist in the visitor's `localStorage` under `ft:<sl
 
 - Placeholders not yet filled: search for `[Your Name]`, `[address]`, `[date]`, `hello@yourdomain.com` etc. (full list in `docs/02-website.md`).
 - Signups arrive as emails in your inbox (via `routes/api.php`); they aren't stored in a list until the Sheets integration (`docs/06`) is added.
-- Non-roofing guides have thinner content than roofing (fewer objections/FAQs). `/v2` (`resources/views/home-v2.blade.php`) is a comparison copy with every guide deepened to roofing's level by the niche-guide skill; it differs from `home` only in the `T` and `FULL` lines.
+- Every guide is at roofing's depth (written by the niche-guide skill, PR #1, replacing the thinner originals). The claims PR #1 lists as unconfirmed per guide still need checking before publishing.
 - Content is general education, not legal/tax/financial advice — costs and rules are estimates to verify before publishing.
 
 ## How to reply
