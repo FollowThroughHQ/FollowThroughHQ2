@@ -26,7 +26,7 @@ Open `http://127.0.0.1:8000` and submit the form. While `MAIL_MAILER=log`, the e
 
 Emails go out through Brevo (free: 300 a day). Brevo's server and port are already set in `.env`. Fill in the rest:
 
-1. In Brevo, add and verify the address you send from (Senders, Domains & Dedicated IPs > Senders).
+1. In Brevo, authenticate the domain you send from (Senders, Domains & Dedicated IPs > Domains > Add a domain). Add the DNS records Brevo shows at your DNS provider, then click Authenticate in Brevo. The domain must be registered: Brevo silently drops mail from a domain that doesn't exist.
 2. In Brevo, open Settings > SMTP & API > SMTP. Copy the SMTP login and generate an SMTP key.
 3. In `.env`:
 
@@ -34,8 +34,8 @@ Emails go out through Brevo (free: 300 a day). Brevo's server and port are alrea
 MAIL_MAILER=smtp
 MAIL_USERNAME=your-brevo-smtp-login
 MAIL_PASSWORD=your-brevo-smtp-key
-MAIL_FROM_ADDRESS="peter@followthroughguides.com"   # the sender you verified in step 1
-MAIL_TO=                                             # optional: another inbox for signups
+MAIL_FROM_ADDRESS="peter@yourpathguide.com"   # any address on the domain from step 1
+MAIL_TO=                                       # optional: another inbox for signups
 ```
 
 Restart `php artisan serve` after changing `.env`.
