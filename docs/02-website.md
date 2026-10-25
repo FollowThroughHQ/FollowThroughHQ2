@@ -1,7 +1,7 @@
 # Website architecture
 
 ## Overview
-The site is one file, `index.html`. There is no framework or build step. Pages are rendered by JavaScript from data arrays and switched with URL hash routes.
+The site is one page, `resources/views/home.blade.php`, served by a small Laravel app at `/` (see `08-signup-server.md` to run it). There is no build step. The view uses no Blade syntax, so never put `{{` or `@word` in it. Pages are rendered by JavaScript from data arrays and switched with URL hash routes.
 
 ## Routes
 | URL hash | Page |
@@ -13,7 +13,7 @@ The site is one file, `index.html`. There is no framework or build step. Pages a
 | `#about` | About page |
 | `#privacy`, `#terms`, `#disclaimer` | Legal pages |
 
-## Data in `index.html`
+## Data in `home.blade.php`
 - `CATS`: the three categories (Trades & repair, Outdoor & hauling, Cleaning & detailing).
 - `STEPS`: the seven shared steps (LLC, EIN, bank account, insurance, pricing, first customers, objections). Edit the text once to change it on every guide.
 - `T`: one entry per trade: `s` (slug), `n` (name), `c` (category index), `cost`, `season`, `fit`, `spend`, and `tips` (seven strings, one per step).
@@ -30,7 +30,7 @@ The site is one file, `index.html`. There is no framework or build step. Pages a
 ## Features
 - **Checkmarks:** each step has a completion button. Progress is saved in the visitor's browser (`localStorage`, key `ft:<slug>`). It never leaves their device.
 - **Related guides:** open guides in the same category in a new tab, using `PUBLIC` as the base address.
-- **Signup form:** currently opens the visitor's email app with a message to you. See `06-google-sheets-forms.md` to save signups to a Google Sheet.
+- **Signup form:** posts the visitor's email to `/api/playbook` (`routes/api.php`), which emails the request to you (setup in `08-signup-server.md`). `FORM_URL` holds that path. See `06-google-sheets-forms.md` to also save signups to a Google Sheet.
 - **Dark mode:** colors are CSS variables and follow the visitor's system setting.
 
 ## Known limitations
@@ -40,4 +40,4 @@ The site is one file, `index.html`. There is no framework or build step. Pages a
 - A single large file is easy to start with but harder to maintain. Consider splitting data into JSON files later.
 
 ## Placeholders to replace
-Search `index.html` for: `[Your Name]`, `[Your Name / Company]`, `[address]`, `[country]`, `[country/state]`, `[date]`, `[X years]`, `[industries / roles]`, and `hello@yourdomain.com`.
+Search `resources/views/home.blade.php` for: `[Your Name]`, `[Your Name / Company]`, `[address]`, `[country]`, `[country/state]`, `[date]`, `[X years]`, `[industries / roles]`, `[email provider]`, and `hello@yourdomain.com`.

@@ -35,7 +35,7 @@ function doPost(e) {
 4. Copy the **Web app URL** (ends in `/exec`).
 
 ### 4. Connect the site
-In `index.html`, replace the `wireSignup` function with the code below, and add the `SHEET_URL` line at the top of the script:
+In `resources/views/home.blade.php`, replace the `wireSignup` function with the code below, and add the `SHEET_URL` line at the top of the script:
 
 ```javascript
 var SHEET_URL = "PASTE-YOUR-WEB-APP-URL-HERE";
