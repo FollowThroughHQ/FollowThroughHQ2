@@ -17,7 +17,7 @@ Pages are rendered client-side from data arrays and switched with URL hash route
 - `T` — one entry per trade (slug, name, category index, cost/season/fit/spend, seven tips).
 - `FULL` — per-slug deep-dive content (licensing, cost table, 90-day plan, objections, FAQ, tools).
 - `OBJ`, `LEGAL` — home-page objections; legal/About/Sales pages (shared renderer).
-- `CONTACT`, `PUBLIC` — contact email and the site's public URL. `PUBLIC` is the base for "Related guides" links and currently points at a claude.ai artifact URL — it must change when the site moves to its own domain.
+- `CONTACT`, `PUBLIC` — contact email and the site's public URL. `PUBLIC` is the base for "Related guides" links; it is empty, so they open on the current page and address (works on any domain, and on `/v2`).
 - `FORM_URL` — where the signup form posts: `/api/playbook` on the same app (`routes/api.php`, emails the request to `MAIL_TO`).
 
 **Adding a trade:** add an entry to `T` and a matching one to `FULL` under the same slug; tiles, guide page and related links appear automatically (details in `docs/02-website.md`).

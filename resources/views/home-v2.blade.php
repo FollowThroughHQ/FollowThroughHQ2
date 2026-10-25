@@ -62,7 +62,7 @@ nav{flex-wrap:wrap;justify-content:flex-end}details{background:var(--surface);bo
 <main id="app" class="wrap"></main>
 <footer><div class="wrap"><p style="max-width:none">© FollowThrough. Remote sales help for US service businesses. Information only, not legal, tax or financial advice.</p><a href="#privacy">Privacy policy</a><a href="#terms">Terms of use</a><a href="#disclaimer">Disclaimer</a></div></footer>
 <script>
-var CONTACT="hello@yourdomain.com",PUBLIC="https://claude.ai/artifact/UPPHnpugi29jcunfmSrimZ",FORM_URL="/api/playbook";
+var CONTACT="hello@yourdomain.com",PUBLIC="",FORM_URL="/api/playbook";
 var CATS=["Trades & repair","Outdoor & hauling","Cleaning & detailing"];
 var STEPS=[
 ["Form your LLC","Register an LLC with your state (usually $50–$500) to separate personal and business liability. Use your state’s Secretary of State website."],
