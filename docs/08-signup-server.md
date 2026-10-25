@@ -54,6 +54,15 @@ APP_KEY=   # run `php artisan key:generate --show` and paste the result
 
 The page and the form are served from the same address, so nothing else needs to change.
 
+### The live site: https://ft.emil-kirilov.eu
+
+It runs on the home TrueNAS, in the `heimdall` jail (nginx and PHP 8.3.1, which can't be updated there). To put changes live, merge them into `main` on GitHub, then run `./deploy.sh` on the Mac. It deploys GitHub's `main`, whatever branch you're on, and never local edits. To try a branch on the live site first: `./deploy.sh origin/<branch>`.
+
+- `composer.json` pins PHP 8.3.1 (`config.platform.php`), so `composer update` only picks packages that run on the server. Keep it until the server's PHP changes.
+- The server's own settings are in `/usr/local/www/followthrough/.env` inside the jail (on the NAS: `/mnt/raid/iocage/jails/heimdall/root/usr/local/www/followthrough/.env`). The deploy never touches it or `storage/`. After editing it, nothing needs restarting.
+- Logs: `storage/logs/laravel-<date>.log` in the same folder, kept 14 days.
+- Server side (nginx, the Caddy proxy, DNS): `NETWORK.md` in the truenas-home notes.
+
 ## Test
 
 ```bash

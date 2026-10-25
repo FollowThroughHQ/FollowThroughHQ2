@@ -33,5 +33,5 @@ Everything else (`app/`, `config/`, `public/`...) is standard Laravel.
 
 ## Important
 
-- The "Related guides" links use the constant `PUBLIC` in `resources/views/home.blade.php`. After moving the site to your own domain, change it to your new address.
+- The live site is https://ft.emil-kirilov.eu, on the home server. Merge into `main`, then run `./deploy.sh` to update it (see `docs/08-signup-server.md`).
 - Content is general education, not legal, tax or financial advice. Costs and rules are estimates. Verify before publishing.
