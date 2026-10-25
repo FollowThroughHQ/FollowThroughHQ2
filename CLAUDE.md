@@ -63,6 +63,7 @@ Emil asked for this on 2026-10-25.
 
 Emil asked for this on 2026-10-25.
 
+- A change that touches only Markdown (`.md`) files gets no branch and no pull request: commit it straight to `main` and push, without asking. A change that also touches any other file follows the rules below.
 - Every branch gets a pull request. As soon as a branch has its first commit, push it and open one, as a draft while the work isn't finished. Never leave a branch without a pull request.
 - Always give the pull request's link: in `## Branches`, and in any status line or decision about that branch.
 - Merging is the user's decision. Ask, and wait for a yes.
