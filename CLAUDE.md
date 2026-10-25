@@ -50,6 +50,15 @@ A session opens with a goal. Work toward it, and don't dilute the session with t
 - Things you notice along the way aren't tasks. Bugs go into the report's `## Bugs` section. Connected work goes into `## Want me to?` as a question, asked once. If the user says yes, it becomes a task; if not, don't bring it up again.
 - When the user asks "are we done?", answer with the 🟢/🔴 line and the status list.
 
+### Ideas
+
+Emil asked for this on 2026-10-25.
+
+- A good idea that won't be done in this session goes into `ideas.md` at the repo root: ideas the user mentions, and ideas you come up with that are worth keeping. It isn't a task, so it stays off the status list.
+- One line per idea at the bottom of the file: the date, the idea in plain words, and whose it is, for example `- 2026-10-25 · Email signups a PDF of their guide (Claude)`. Check the file first so the same idea isn't added twice.
+- Whenever you add an idea, say so in that turn's report, in `## Ideas`.
+- When an idea becomes a task or the user drops it, take it out of `ideas.md`.
+
 ### Branches and pull requests
 
 Emil asked for this on 2026-10-25.
@@ -81,6 +90,7 @@ Order the lines by status as in the table: what needs the user first, done last.
 
 End with these sections, each only when it has something in it:
 - `## Bugs`: bugs you found outside the task, one plain sentence each, with the file and the fix.
+- `## Ideas`: each idea you added to `ideas.md` this turn, one line each starting with 💡, for example "💡 Email signups a PDF of their guide: added to `ideas.md`".
 - `## Branches`: from the session's first edit until it ends, every branch you worked on: what's on it, and whether it's committed, pushed and merged, with the pull request's link. Start each line with its state: 🟡 pull request open, 🟢 merged, or ⚪ for a branch someone else made that has no pull request (say so). A branch with no change since your last report gets one line.
 - `## Commands for you`: each command in the order to run it, saying where: the terminal and folder (for example "Your Mac, in `~/Projects/FollowThroughHQ2`"), or the website page and button (for example GitHub's Settings > Pages). Don't hand the user a command that only looks at something: run it yourself.
 - `## Want me to?`: connected work that isn't part of the session's goal, one question per line. Ask each one once.
