@@ -121,9 +121,10 @@ return [
     |--------------------------------------------------------------------------
     |
     | The inbox that receives playbook requests from the site's signup form.
+    | Defaults to the "From" address, so the app emails you at your own address.
     |
     */
 
-    'to' => env('MAIL_TO'),
+    'to' => env('MAIL_TO') ?: env('MAIL_FROM_ADDRESS'),
 
 ];

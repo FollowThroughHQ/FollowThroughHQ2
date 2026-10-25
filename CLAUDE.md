@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-FollowThrough: a website (plus business docs) selling start-up guides to new US service businesses. It is a small Laravel app with no database. The entire site is one page, `resources/views/home.blade.php` — HTML, CSS and vanilla JS, served at `/` by `routes/web.php`. The view contains no Blade syntax on purpose (`tests/Feature/HomeTest.php` checks it renders byte-for-byte); keep `{{` and `@word` out of it. The only other route is the signup endpoint in `routes/api.php`.
+FollowThrough: a website (plus business docs) selling start-up guides to new US service businesses. It is a small Laravel 13 app with no login and no database (sessions and cache on files, queue sync). The entire site is one page, `resources/views/home.blade.php` — HTML, CSS and vanilla JS, served at `/` by `routes/web.php`. The view contains no Blade syntax on purpose (`tests/Feature/HomeTest.php` checks it renders byte-for-byte); keep `{{` and `@word` out of it. The only other route is the signup endpoint in `routes/api.php`.
 
 **Run/preview:** `php artisan serve`, then `http://127.0.0.1:8000`. **Test:** `php artisan test`. First-time setup is in `docs/08-signup-server.md`.
 
@@ -18,7 +18,7 @@ Pages are rendered client-side from data arrays and switched with URL hash route
 - `FULL` — per-slug deep-dive content (licensing, cost table, 90-day plan, objections, FAQ, tools).
 - `OBJ`, `LEGAL` — home-page objections; legal/About/Sales pages (shared renderer).
 - `CONTACT`, `PUBLIC` — contact email and the site's public URL. `PUBLIC` is the base for "Related guides" links and currently points at a claude.ai artifact URL — it must change when the site moves to its own domain.
-- `FORM_URL` — where the signup form posts: `/api/playbook` on the same app (`routes/api.php`, emails the request to `MAIL_TO`).
+- `FORM_URL` — where the signup form posts: `/api/playbook` on the same app (`routes/api.php`), which emails the request to `MAIL_TO` (empty = `MAIL_FROM_ADDRESS`) through Brevo SMTP. Settings live in `.env` (git-ignored); setup in `docs/08-signup-server.md`.
 
 **Adding a trade:** add an entry to `T` and a matching one to `FULL` under the same slug; tiles, guide page and related links appear automatically (details in `docs/02-website.md`).
 
