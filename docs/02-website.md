@@ -8,10 +8,10 @@ The site is one page, `resources/views/home.blade.php`, served by a small Larave
 |---|---|
 | `#home` | Home: hero, sample objection handler, trades by category, signup |
 | `#guides` | Start-up guides index by category |
-| `#roofing`, `#hvac`, `#plumbing`, `#painting`, `#handyman`, `#landscaping`, `#junk-removal`, `#moving-transportation`, `#house-cleaning`, `#car-detailing` | One guide per trade |
+| `#roofing`, `#hvac`, `#plumbing`, `#painting`, `#handyman`, `#landscaping`, `#junk-removal`, `#hauling-transportation` (old `#moving-transportation` links redirect), `#house-cleaning`, `#car-detailing` | One guide per trade |
 | `#sales` | Sales hub |
 | `#about` | About page |
-| `#privacy`, `#terms`, `#disclaimer` | Legal pages |
+| `#privacy`, `#terms`, `#disclaimer`, `#affiliate` | Legal pages (`#affiliate` is the affiliate disclosure) |
 
 ## Data in `home.blade.php`
 - `CATS`: the three categories (Trades & repair, Outdoor & hauling, Cleaning & detailing).

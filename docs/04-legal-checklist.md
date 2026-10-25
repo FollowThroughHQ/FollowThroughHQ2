@@ -6,6 +6,7 @@ This is a to-do list, not legal advice. Have a lawyer review the legal pages bef
 - **Privacy policy:** what is collected, browser storage, third parties, rights, children, changes.
 - **Terms of use:** information only, intellectual property, limitation of liability, governing law.
 - **Disclaimer:** not professional advice, estimates only, no income promises, no affiliation.
+- **Affiliate disclosure:** links may earn a commission at no extra cost, which links, how products are chosen. When real affiliate links are added, also put a short note next to them on that page (the FTC expects it near the link, not only on a separate page).
 
 ## Fill in
 Name or company, address, country, governing law, last-updated date, contact email.

@@ -2,7 +2,7 @@
 
 ## Trades and categories
 - **Trades & repair:** HVAC, Plumbing, Roofing, Painting, Handyman
-- **Outdoor & hauling:** Landscaping, Junk Removal, Moving & Transportation
+- **Outdoor & hauling:** Landscaping, Junk Removal, Hauling & Transportation
 - **Cleaning & detailing:** House Cleaning, Car Detailing
 
 ## Guide structure (every trade)
