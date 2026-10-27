@@ -18,6 +18,7 @@ Pages are rendered client-side from data arrays, each at its own path (`/`, `/gu
 - `FULL` — per-slug deep-dive content (licensing, cost table, 90-day plan, objections, FAQ, tools).
 - `OBJ`, `LEGAL` — home-page objections; legal/About/Sales pages (shared renderer).
 - `EX` — the made-up example stories in the home page's "How it plays out" section. Replace them with real ones (with permission) as owners share them; never present invented ones as real.
+- `VB` — businesses that passed the Verified Business badge check, shown at `/verified` (`docs/11`).
 - `CONTACT` — contact email.
 - `FORM_URL` — where the signup form posts: `/api/playbook` on the same app (`routes/api.php`), which emails the request to `MAIL_TO` (empty = `MAIL_FROM_ADDRESS`) through Brevo SMTP. Settings live in `.env` (git-ignored); setup in `docs/08-signup-server.md`.
 
@@ -27,7 +28,7 @@ Step-completion checkmarks persist in the visitor's `localStorage` under `ft:<sl
 
 ## Docs
 
-`docs/01` business plan · `02` website architecture and how to edit · `03` content and sales structure · `04` legal checklist · `05` GitHub repo (its Pages hosting is outdated) · `06` Google Sheets signup integration · `07` roadmap · `08` running the app, signup emails, hosting · `09` value propositions · `10` Visibility Autopilot (the paid service: plans and launch to-do list; how each plan works is in `01`). Read `02-website.md` before changing the site; content work should follow the structures in `03`.
+`docs/01` business plan · `02` website architecture and how to edit · `03` content and sales structure · `04` legal checklist · `05` GitHub repo (its Pages hosting is outdated) · `06` Google Sheets signup integration · `07` roadmap · `08` running the app, signup emails, hosting · `09` value propositions · `10` Visibility Autopilot (the paid service: plans and launch to-do list; how each plan works is in `01`) · `11` Verified Business badge (the $49 badge: the check, emails, directory, launch to-do list). Read `02-website.md` before changing the site; content work should follow the structures in `03`.
 
 ## Current gaps (deliberate, see docs)
 

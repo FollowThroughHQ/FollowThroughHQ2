@@ -7,6 +7,7 @@ This is a to-do list, not legal advice. Have a lawyer review the legal pages bef
 - **Terms of use:** information only, intellectual property, limitation of liability, governing law.
 - **Disclaimer:** not professional advice, estimates only, no income promises, no affiliation.
 - **Service terms:** for paid Visibility Autopilot plans: billing, month-to-month with free cancellation, what the customer provides, ownership, no promised results, honesty about reviews, ending the service. The Privacy page has a matching section and the Terms page points to it.
+- **Service terms, Verified Business badge section:** the check, one-time $49 paid only after passing, no refund after the badge is sent, where the badge may be shown, rechecks and removal. The Privacy page has a matching section, which also says what the public `/verified` profile shows. Ask the lawyer whether the badge's claim (identity, registration, website and contact details confirmed) matches the check in `11-verified-badge.md`: the FTC treats a trust seal that claims more than was checked as deceptive.
 - **Affiliate disclosure:** links may earn a commission at no extra cost, which links, how products are chosen. When real affiliate links are added, also put a short note next to them on that page (the FTC expects it near the link, not only on a separate page).
 
 ## Fill in

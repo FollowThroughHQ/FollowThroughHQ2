@@ -6,13 +6,15 @@ The site is one page, `resources/views/home.blade.php`, served by a small Larave
 ## Routes
 | Address | Page |
 |---|---|
-| `/` | Home: hero, sample objection handler, example stories, calculator teaser, Visibility Autopilot box, trades by category, signup (`/#signup`, `/#demo` jump to those sections) |
+| `/` | Home: hero, sample objection handler, example stories, calculator teaser, Visibility Autopilot box, Verified badge box, trades by category, signup (`/#signup`, `/#demo` jump to those sections) |
 | `/guides` | Start-up guides index by category |
 | `/roofing`, `/hvac`, `/plumbing`, `/painting`, `/handyman`, `/landscaping`, `/junk-removal`, `/hauling-transportation` (old `/moving-transportation` links redirect), `/house-cleaning`, `/car-detailing` | One guide per trade |
 | `/sales` | Sales hub |
 | `/calculator` | Lost quotes calculator |
 | `/visibility` | Visibility Autopilot: the paid listings, Google profile and website service. Linked from the footer, a box on the home page and step 6 of every guide. How each plan works: `01-business-plan.md`; launch to-do list: `10-visibility-autopilot.md` |
-| `/service-terms` | Service terms for paid Visibility Autopilot plans |
+| `/badge` | Verified Business badge: a one-time $49 badge for a business's website, with an order form that emails you (`/api/badge` in `routes/api.php`). Linked from the footer and a box on the home page. How it runs: `11-verified-badge.md` |
+| `/verified` | The directory of businesses that passed the badge check, from `VB`. Each badge links to its business here (`/verified#acme-roofing`) |
+| `/service-terms` | Service terms for paid Visibility Autopilot plans and the Verified Business badge |
 | `/about` | About page |
 | `/privacy`, `/terms`, `/service-terms`, `/disclaimer`, `/affiliate` | Legal pages (`/affiliate` is the affiliate disclosure) |
 | `/sitemap.xml` | The list of pages for search engines |
@@ -27,6 +29,7 @@ Old `#` links (`/#roofing`, `/#home-contact`) still open the right page, so link
 - `OBJ`: the three sample objections on the home page.
 - `EX`: the three example stories on the home page (made up, and labeled so). Swap in real ones, with the owner's permission, as they come in.
 - `LEGAL`: legal pages plus the About and Sales hub pages (they share a renderer).
+- `VB`: the businesses in the `/verified` directory, one per passed badge check (how to add one: `11-verified-badge.md`).
 - `CONTACT`: contact email.
 
 ## How to add a new trade

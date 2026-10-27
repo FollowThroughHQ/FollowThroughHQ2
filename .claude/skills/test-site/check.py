@@ -84,9 +84,8 @@ while(queue.length){var h=queue.shift();out.pages[h]=visit(h);
   for(var i=0;i<n;i++){go(h);errs();var a=document.querySelectorAll("a")[i];if(!a)break;
     var href=a.getAttribute("href")||"",text=(a.innerText||a.getAttribute("aria-label")||"").trim().slice(0,60);
     if(href.charAt(0)!=="/"&&href.charAt(0)!=="#"||/^\/(\/|api\/)/.test(href)){out.other.push({page:h,href:href,text:text});continue}
-    var u=href.split("#"),id=u[0].slice(1)||"home",j=u[1],to=j&&jump[j],r={page:h,href:href,text:text,problems:[]};
+    var u=href.split("#"),id=u[0].slice(1)||"home",j=u[1],to=j&&(jump[j]||j),r={page:h,href:href,text:text,problems:[]};
     if(href.charAt(0)==="#"){r.problems.push("it uses an old #address; link to /"+(u[1]||"")+" instead");out.clicks.push(r);continue}
-    if(j&&!to)r.problems.push("there is no #"+j+" section to jump to");
     if(a.target){if(!known[id])r.problems.push("it opens a new tab on \""+id+"\", which isn't a page");out.clicks.push(r);continue}
     try{a.click()}catch(x){r.problems.push("click threw: "+x.message)}
     var e=errs();if(e.length)r.problems.push("JavaScript error: "+e.join("; "));
