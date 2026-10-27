@@ -20,7 +20,7 @@ The customer pays only after passing, so there are no refunds to handle.
 
 ## The check
 
-The main check is the Google profile. The other three take a few minutes and are what lets the badge say "identity, registration, website address and contact details confirmed". If you skip them, the page and the badge must stop saying that (see "Why the check has four parts" below).
+Every order gets all four checks (the owner decided this on 2026-10-27). The main check is the Google profile. The other three take a few minutes and are what lets the badge say "identity, registration, website address and contact details confirmed" (see "Why the check has four parts" below).
 
 1. **Google Business Profile is verified.** Search the business name on Google Maps. A profile the owner hasn't verified shows "Own this business?" or "Claim this business". A verified one doesn't. If you're unsure, ask the owner for a screenshot of their Business Profile dashboard showing it as verified.
 2. **Registered.** Search the business in its state's business register: search for "[state] business entity search", which is the Secretary of State's free lookup. A sole owner trading under their own name may not be registered there. Then look for a DBA ("doing business as") filing with the county, or a city business license.
@@ -63,7 +63,7 @@ The badge image is `public/badge.svg`.
 
 ## Why the check has four parts
 
-The original idea was "a verified Google page means verified". But the badge tells visitors that identity, registration, website and contact details were confirmed, and Google verification alone doesn't show registration or that the website is theirs. A seal that claims more than was checked can be deceptive under US rules (the FTC has acted against trust seals before). So either keep the four checks, or change the badge's wording on `/badge`, `/verified`, the service terms and this doc to "Google-verified business profile" only.
+The original idea was "a verified Google page means verified". But the badge tells visitors that identity, registration, website and contact details were confirmed, and Google verification alone doesn't show registration or that the website is theirs. A seal that claims more than was checked can be deceptive under US rules (the FTC has acted against trust seals before). So every order gets all four checks. If they're ever cut back to Google only, the badge's wording on `/badge`, `/verified`, the service terms and this doc has to change to "Google-verified business profile" first.
 
 ## To do before selling
 
