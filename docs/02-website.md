@@ -12,7 +12,7 @@ The site is one page, `resources/views/home.blade.php`, served by a small Larave
 | `/sales` | Sales hub |
 | `/calculator` | Lost quotes calculator |
 | `/visibility` | Visibility Autopilot: the paid listings, Google profile and website service. Linked from the footer, a box on the home page and step 6 of every guide. How each plan works: `01-business-plan.md`; launch to-do list: `10-visibility-autopilot.md` |
-| `/badge` | Verified Business badge: a one-time $49 badge for a business's website, with an order form that emails you (`/api/badge` in `routes/api.php`). Linked from the footer and a box on the home page. How it runs: `11-verified-badge.md` |
+| `/badge` | Verified Business badge: a one-time $49 badge for a business's website, with an order form that emails you (`/api/badge` in `routes/api.php`). Linked from the footer, a box on the home page, the Visibility Autopilot page and step 6 of every guide. How it runs: `11-verified-badge.md` |
 | `/verified` | The directory of businesses that passed the badge check, from `VB`. Each badge links to its business here (`/verified#acme-roofing`) |
 | `/service-terms` | Service terms for paid Visibility Autopilot plans and the Verified Business badge |
 | `/about` | About page |
