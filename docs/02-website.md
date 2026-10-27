@@ -6,14 +6,15 @@ The site is one page, `resources/views/home.blade.php`, served by a small Larave
 ## Routes
 | Address | Page |
 |---|---|
-| `/` | Home: hero, sample objection handler, example stories, calculator teaser, trades by category, signup (`/#signup`, `/#demo` jump to those sections) |
+| `/` | Home: hero, sample objection handler, example stories, calculator teaser, Visibility Autopilot box, trades by category, signup (`/#signup`, `/#demo` jump to those sections) |
 | `/guides` | Start-up guides index by category |
 | `/roofing`, `/hvac`, `/plumbing`, `/painting`, `/handyman`, `/landscaping`, `/junk-removal`, `/hauling-transportation` (old `/moving-transportation` links redirect), `/house-cleaning`, `/car-detailing` | One guide per trade |
 | `/sales` | Sales hub |
 | `/calculator` | Lost quotes calculator |
-| `/visibility` | Visibility Autopilot: the paid listings, Google profile and website service (not linked from other pages yet) |
+| `/visibility` | Visibility Autopilot: the paid listings, Google profile and website service. Linked from the footer, a box on the home page and step 6 of every guide. How it runs: `10-visibility-autopilot.md` |
+| `/service-terms` | Service terms for paid Visibility Autopilot plans |
 | `/about` | About page |
-| `/privacy`, `/terms`, `/disclaimer`, `/affiliate` | Legal pages (`/affiliate` is the affiliate disclosure) |
+| `/privacy`, `/terms`, `/service-terms`, `/disclaimer`, `/affiliate` | Legal pages (`/affiliate` is the affiliate disclosure) |
 | `/sitemap.xml` | The list of pages for search engines |
 
 Old `#` links (`/#roofing`, `/#home-contact`) still open the right page, so links shared before the change keep working. Trade addresses come from `T` automatically. A new page that isn't a trade needs its name added to the list in `routes/web.php`; `php artisan test` fails if a page the site links to has no address.

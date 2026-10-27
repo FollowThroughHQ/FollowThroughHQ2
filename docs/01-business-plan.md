@@ -14,6 +14,16 @@ Many new service businesses (HVAC, roofing, detailing, cleaning, etc.) do good w
 3. **Personalized help:** custom scripts or a call review, about $200-500.
 4. **Done-for-you follow-up:** written follow-up on quotes, paid per booked job or commission. Best fit while working from Europe because it is asynchronous.
 
+## Visibility Autopilot (monthly service)
+New businesses often lack leads before they lack closing skill, so alongside the ladder there is a monthly service that helps them get found: listings on 40+ directories, Google Business Profile care and website fixes, on one bill, with results in plain numbers.
+- **Starter, $49/month:** a monthly website check with fixes ranked, a listing check and a report. Done by hand with free tools, so it costs nothing to start.
+- **Growth, $199/month:** listings and the Google profile looked after for them.
+- **Done-for-you, from $499/month:** everything, plus the website fixes and a monthly strategy call.
+- Month to month, no setup fee, free cancellation.
+- It leads naturally into the sales offers: more calls from being found, then more of them won with the scripts.
+
+How it runs and what's left to launch: `10-visibility-autopilot.md`.
+
 Later income options: affiliate links for quoting and scheduling software (Jobber, Housecall Pro, etc.), once there is an audience that trusts the site.
 
 ## Two-week validation plan (about $0-50)
@@ -37,4 +47,4 @@ Later income options: affiliate links for quoting and scheduling software (Jobbe
 - Check with a lawyer before scaling.
 
 ## Metrics
-Messages sent, reply rate, call rate, pain points mentioned, paid conversions, playbook signups per trade.
+Messages sent, reply rate, call rate, pain points mentioned, paid conversions, playbook signups per trade. For Visibility Autopilot: inquiries per plan, paying customers per plan, cancellations, and hours spent per customer each month.

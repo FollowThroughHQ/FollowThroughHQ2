@@ -27,7 +27,7 @@ Step-completion checkmarks persist in the visitor's `localStorage` under `ft:<sl
 
 ## Docs
 
-`docs/01` business plan · `02` website architecture and how to edit · `03` content and sales structure · `04` legal checklist · `05` GitHub repo (its Pages hosting is outdated) · `06` Google Sheets signup integration · `07` roadmap · `08` running the app, signup emails, hosting · `09` value propositions. Read `02-website.md` before changing the site; content work should follow the structures in `03`.
+`docs/01` business plan · `02` website architecture and how to edit · `03` content and sales structure · `04` legal checklist · `05` GitHub repo (its Pages hosting is outdated) · `06` Google Sheets signup integration · `07` roadmap · `08` running the app, signup emails, hosting · `09` value propositions · `10` Visibility Autopilot (the paid service: how it runs, launch to-do list). Read `02-website.md` before changing the site; content work should follow the structures in `03`.
 
 ## Current gaps (deliberate, see docs)
 

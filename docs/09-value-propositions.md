@@ -3,11 +3,12 @@
 What FollowThrough offers, to whom, and why they'd pick it over the alternatives. Use this for the website's wording, outreach messages and the paid offers. These are starting points: the words customers use on calls (see the validation plan in `01-business-plan.md`) should replace ours as they come in.
 
 ## In one sentence
-FollowThrough helps new US service businesses get set up properly and win more of the quotes they send, with plain, honest sales scripts written for their trade.
+FollowThrough helps new US service businesses get set up properly, get found by local customers, and win more of the quotes they send, with plain, honest sales scripts written for their trade.
 
 ## Who it's for
 1. **Brand-new owners (first 12 months).** They know the trade but not the business side: licenses, insurance, pricing, finding the first customers.
 2. **Owners who get inquiries but lose the quotes.** Busy, good at the work, never trained in sales. Quotes go quiet and they don't know what to say next without feeling pushy.
+3. **Owners who don't get enough inquiries.** Their listings are missing or wrong, their Google profile is empty and their website is slow, and they have no time or know-how to fix it.
 
 ## Their problem, in their words
 Our guesses, to check on the first calls:
@@ -15,6 +16,8 @@ Our guesses, to check on the first calls:
 - "They said it's too expensive and went with someone cheaper."
 - "I don't want to be pushy."
 - "I don't know which licenses and insurance I actually need."
+- "The phone doesn't ring enough."
+- "I know I should be on Google and Yelp, but I don't have time for it."
 
 ## The main promise
 Most jobs aren't lost to a cheaper quote. They're lost to silence after the quote. FollowThrough gives owners the exact words to follow up and answer objections, calmly and honestly, so more quotes turn into booked jobs.
@@ -28,6 +31,7 @@ Most jobs aren't lost to a cheaper quote. They're lost to silence after the quot
 | To know what to say | Scripts from the first call to the review request, plus objection answers for their trade | They sound confident without sounding pushy |
 | To stop losing quotes | Follow-up messages for day 2, day 5 and day 12 | The cheapest way to win more work: no extra leads needed |
 | To see if it's worth it | The lost quotes calculator | Shows in dollars what a few more wins a month adds up to |
+| To get found | Visibility Autopilot: listings on 40+ directories, Google profile care and website fixes | More people find them and call, without them learning SEO or juggling tools |
 
 ## What each offer is worth (the offer ladder from `01-business-plan.md`)
 1. **Free guides and playbook:** start right and get the first scripts, at no cost and no risk.
@@ -35,10 +39,14 @@ Most jobs aren't lost to a cheaper quote. They're lost to silence after the quot
 3. **Personal help ($200–500):** scripts written for their business, or a review of how they handle calls and quotes. Advice that fits them, not generic tips.
 4. **Done-for-you follow-up (paid per booked job):** we follow up on their quotes for them. They pay only when a quote becomes a job, so there's nothing to lose.
 
+Alongside the ladder, a monthly service:
+- **Visibility Autopilot ($49 / $199 / from $499 a month):** their business listed correctly on 40+ directories, their Google profile kept active (weekly posts, review replies, photos, new-review alerts) and their website checked and fixed. Its edge over the alternatives: **one bill** instead of a listings tool, a review tool, a website checker and a freelancer, and **results in plain numbers** (calls, reviews, listings fixed) instead of ranking charts. Month to month, no setup fee, free cancellation. Details in `10-visibility-autopilot.md`.
+
 ## Why us, not the alternatives
 - **Software companies' free guides** (Housecall Pro, Jobber, Joist): good tools and templates, but their guides are general and built to sell software. They don't teach what to say to win the job.
 - **General sales books and courses:** long, expensive and not written for tradespeople.
 - **Business coaches:** helpful but often cost hundreds a month.
+- **Listing and SEO tools and agencies:** each tool covers one part and sends its own bill, and agencies report in jargon and ranking charts. Visibility Autopilot does all of it on one bill and reports in plain numbers.
 - **Doing nothing:** quotes keep going quiet.
 
 What makes FollowThrough different:
@@ -50,7 +58,7 @@ What makes FollowThrough different:
 
 ## What we don't promise
 - No guaranteed income or results.
-- We don't find them leads; we help them win more of the leads they already get.
+- The guides and scripts don't find them leads; they help them win more of the leads they already get. Visibility Autopilot helps them get found, but never promises rankings, a number of calls or first place on Google.
 - Not legal, tax or insurance advice. Costs and rules are estimates to check locally.
 
 ## Short versions to use
