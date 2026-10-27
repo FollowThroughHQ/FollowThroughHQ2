@@ -16,13 +16,47 @@ Many new service businesses (HVAC, roofing, detailing, cleaning, etc.) do good w
 
 ## Visibility Autopilot (monthly service)
 New businesses often lack leads before they lack closing skill, so alongside the ladder there is a monthly service that helps them get found: listings on 40+ directories, Google Business Profile care and website fixes, on one bill, with results in plain numbers.
-- **Starter, $49/month:** a monthly website check with fixes ranked, a listing check and a report. Done by hand with free tools, so it costs nothing to start.
-- **Growth, $199/month:** listings and the Google profile looked after for them.
-- **Done-for-you, from $499/month:** everything, plus the website fixes and a monthly strategy call.
-- Month to month, no setup fee, free cancellation.
+- Month to month, no setup fee, free cancellation (the rules are on the site's `/service-terms` page).
+- Everything runs by hand with free tools and Google Sheets, so it costs nothing to start. A tool can come later, once customers pay for it.
 - It leads naturally into the sales offers: more calls from being found, then more of them won with the scripts.
 
-How it runs and what's left to launch: `10-visibility-autopilot.md`.
+### How every plan starts
+1. The owner emails which plan they want. Reply with the next steps and the payment link.
+2. Collect the business details once: name, address, phone, hours, services, service area, license numbers where shown, logo and 5–10 photos of their work. These go in the customer list, and every listing is copied from them so they match exactly.
+3. Ask the owner to add you as a manager of their Google Business Profile (all plans, so the report can show their numbers) and to Google Search Console for their website (free; Done-for-you also needs access to the website itself).
+4. Do the first full check (below) and send it within the first week.
+
+### Starter, $49/month: you check, they fix
+The owner makes the changes; you tell them what to change first.
+1. **Website check, monthly.**
+   - Speed and basic search problems: run the site through Google PageSpeed Insights (free, pagespeed.web.dev), on mobile.
+   - Search problems Google sees: Google Search Console.
+   - What stops visitors from calling, checked by hand on a phone: the phone number is tappable at the top, the services and service area are clear, the quote form works, reviews are shown, and license and insurance are mentioned where the state requires it.
+   - Write each problem in the website check sheet, marked high, medium or low, with one plain sentence on how to fix it. Send the top five.
+2. **Listing check.** Search each directory on the list for the business name and phone, and mark it correct, wrong or missing in the listing check sheet, with the link to fix it. All 40+ in the first month and every three months after that; the ten that matter most every month.
+3. **Monthly report.** One page from the report template: Google profile calls, website clicks and direction requests (from the profile's Performance page), new reviews and average rating, listings correct out of the total, website speed and problems fixed. Each number next to last month's.
+
+Time, a guess to check on the first customer: 2–3 hours in the first month, about 1 hour a month after that.
+
+### Growth, $199/month: you look after listings and the Google profile
+Everything in Starter, plus:
+1. **Listings.** In the first month, create or correct the listings, the most important first, until all 40+ match the business details. After that, fix anything the listing check finds and add new directories as they come up. Save each login in the customer list under the owner's email, so the listings stay theirs.
+2. **Weekly Google post.** One short post a week: a recent job with a photo, a seasonal tip ("book your AC check before the heat") or an offer the owner approves. Write a month of posts at once and schedule them.
+3. **Review replies.** Google emails managers when a new review comes in. Forward each alert to the owner the same day, so they can follow up with the customer while the job is fresh. Reply to every review within two working days, in the owner's voice: thank happy customers by name and the job; answer unhappy ones calmly, without arguing, and offer to talk by phone. Ask the owner before replying to a 1- or 2-star review.
+4. **Photos.** Ask the owner to text or email 2–3 photos of their work each week. Add the best ones to the profile.
+5. **Report.** The Starter report, plus posts published, reviews replied to and listings fixed.
+
+Time, a guess: 6–8 hours in the first month (the listings), then 2–3 hours a month.
+
+### Done-for-you, from $499/month: you do everything
+Everything in Growth, plus:
+1. **Price.** After the first website check, quote a fixed monthly price in writing, based on how much the site needs. A small site with a few problems stays at $499; a bigger site or a rebuild costs more.
+2. **Website fixes.** Each month, make the fixes from the top of the website check sheet: speed (smaller images, fewer add-ons), search basics (page titles, descriptions, a page per service and per town served), and the things that stop calls (tappable phone number, a working quote form, reviews on the page). Make sure a backup exists before any change, and list what was changed in the report.
+3. **Monthly strategy call, about 30 minutes.** Book it for the owner's morning or after their workday (US time). Go through the report, agree the next month's top three fixes and the posts' themes, and hear what jobs they want more of. Use what you hear to steer posts and fixes towards those jobs.
+
+Time, a guess: 8–12 hours in the first month, then 4–6 hours a month, plus the call.
+
+What's left to launch is in `10-visibility-autopilot.md`.
 
 Later income options: affiliate links for quoting and scheduling software (Jobber, Housecall Pro, etc.), once there is an audience that trusts the site.
 

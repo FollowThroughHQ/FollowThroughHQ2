@@ -11,7 +11,7 @@ The site is one page, `resources/views/home.blade.php`, served by a small Larave
 | `/roofing`, `/hvac`, `/plumbing`, `/painting`, `/handyman`, `/landscaping`, `/junk-removal`, `/hauling-transportation` (old `/moving-transportation` links redirect), `/house-cleaning`, `/car-detailing` | One guide per trade |
 | `/sales` | Sales hub |
 | `/calculator` | Lost quotes calculator |
-| `/visibility` | Visibility Autopilot: the paid listings, Google profile and website service. Linked from the footer, a box on the home page and step 6 of every guide. How it runs: `10-visibility-autopilot.md` |
+| `/visibility` | Visibility Autopilot: the paid listings, Google profile and website service. Linked from the footer, a box on the home page and step 6 of every guide. How each plan works: `01-business-plan.md`; launch to-do list: `10-visibility-autopilot.md` |
 | `/service-terms` | Service terms for paid Visibility Autopilot plans |
 | `/about` | About page |
 | `/privacy`, `/terms`, `/service-terms`, `/disclaimer`, `/affiliate` | Legal pages (`/affiliate` is the affiliate disclosure) |
