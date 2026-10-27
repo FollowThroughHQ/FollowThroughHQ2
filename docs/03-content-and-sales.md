@@ -1,9 +1,9 @@
 # Content and sales
 
 ## Trades and categories
-- **Trades & repair:** HVAC, Plumbing, Roofing, Painting, Handyman
-- **Outdoor & hauling:** Landscaping, Junk Removal, Hauling & Transportation
-- **Cleaning & detailing:** House Cleaning, Car Detailing
+- **Trades & repair:** HVAC, Plumbing, Roofing, Painting, Handyman, Electrical Services, Appliance Repair, Drywall Installation & Repair
+- **Outdoor & hauling:** Landscaping, Junk Removal, Hauling & Transportation, Lawn Care
+- **Cleaning & detailing:** House Cleaning, Car Detailing, Pressure Washing
 
 ## Guide structure (every trade)
 1. Facts: start-up cost, busy season, is it a good fit, where the money goes.

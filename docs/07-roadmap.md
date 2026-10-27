@@ -14,7 +14,7 @@
 
 ## Later
 - Message templates library with copy buttons.
-- More trades: pressure washing, window cleaning, gutter cleaning, pest control, fencing, flooring, electrical, tree service, pool service, appliance repair.
+- More trades: window cleaning, gutter cleaning, pest control, fencing, flooring, tree service, pool service.
 - Blog posts for search ("how much does it cost to start a roofing business").
 - Resources page and affiliate links for software.
 - Paid playbook and custom-script offer.

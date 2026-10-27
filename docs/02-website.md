@@ -8,7 +8,7 @@ The site is one page, `resources/views/home.blade.php`, served by a small Larave
 |---|---|
 | `/` | Home: hero, sample objection handler, example stories, calculator teaser, Visibility Autopilot box, Verified badge box, trades by category, signup (`/#signup`, `/#demo` jump to those sections) |
 | `/guides` | Start-up guides index by category |
-| `/roofing`, `/hvac`, `/plumbing`, `/painting`, `/handyman`, `/landscaping`, `/junk-removal`, `/hauling-transportation` (old `/moving-transportation` links redirect), `/house-cleaning`, `/car-detailing` | One guide per trade |
+| `/roofing`, `/hvac`, `/plumbing`, `/painting`, `/handyman`, `/electrical`, `/appliance-repair`, `/drywall`, `/landscaping`, `/junk-removal`, `/hauling-transportation` (old `/moving-transportation` links redirect), `/lawn-care`, `/house-cleaning`, `/car-detailing`, `/pressure-washing` | One guide per trade |
 | `/sales` | Sales hub |
 | `/calculator` | Lost quotes calculator |
 | `/visibility` | Visibility Autopilot: the paid listings, Google profile and website service. Linked from the footer, a box on the home page and step 6 of every guide. How each plan works: `01-business-plan.md`; launch to-do list: `10-visibility-autopilot.md` |
