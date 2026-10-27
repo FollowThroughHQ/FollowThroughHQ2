@@ -11,6 +11,7 @@ The site is one page, `resources/views/home.blade.php`, served by a small Larave
 | `/roofing`, `/hvac`, `/plumbing`, `/painting`, `/handyman`, `/landscaping`, `/junk-removal`, `/hauling-transportation` (old `/moving-transportation` links redirect), `/house-cleaning`, `/car-detailing` | One guide per trade |
 | `/sales` | Sales hub |
 | `/calculator` | Lost quotes calculator |
+| `/visibility` | Visibility Autopilot: the paid listings, Google profile and website service (not linked from other pages yet) |
 | `/about` | About page |
 | `/privacy`, `/terms`, `/disclaimer`, `/affiliate` | Legal pages (`/affiliate` is the affiliate disclosure) |
 | `/sitemap.xml` | The list of pages for search engines |
