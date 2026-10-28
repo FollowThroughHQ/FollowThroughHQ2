@@ -21,12 +21,12 @@ New businesses often lack leads before they lack closing skill, so alongside the
 - It leads naturally into the sales offers: more calls from being found, then more of them won with the scripts.
 
 ### How every plan starts
-1. The owner emails which plan they want. Reply with the next steps and the payment link.
+1. The owner emails which plan they want. Reply with the next steps and the payment link. The first 30 days are free: Stripe takes their card now and charges on day 31, unless they cancel first. One free month per business.
 2. Collect the business details once: name, address, phone, hours, services, service area, license numbers where shown, logo and 5–10 photos of their work. These go in the customer list, and every listing is copied from them so they match exactly.
 3. Ask the owner to add you as a manager of their Google Business Profile (all plans, so the report can show their numbers) and to Google Search Console for their website (free; Done-for-you also needs access to the website itself).
 4. Do the first full check (below) and send it within the first week.
 
-### Starter, $49/month: you check, they fix
+### Starter, $99/month: you check, they fix
 The owner makes the changes; you tell them what to change first.
 1. **Website check, monthly.**
    - Speed and basic search problems: run the site through Google PageSpeed Insights (free, pagespeed.web.dev), on mobile.
@@ -48,11 +48,10 @@ Everything in Starter, plus:
 
 Time, a guess: 6–8 hours in the first month (the listings), then 2–3 hours a month.
 
-### Done-for-you, from $499/month: you do everything
+### Done-for-you, $299/month: you do everything
 Everything in Growth, plus:
-1. **Price.** After the first website check, quote a fixed monthly price in writing, based on how much the site needs. A small site with a few problems stays at $499; a bigger site or a rebuild costs more.
-2. **Website fixes.** Each month, make the fixes from the top of the website check sheet: speed (smaller images, fewer add-ons), search basics (page titles, descriptions, a page per service and per town served), and the things that stop calls (tappable phone number, a working quote form, reviews on the page). Make sure a backup exists before any change, and list what was changed in the report.
-3. **Monthly strategy call, about 30 minutes.** Book it for the owner's morning or after their workday (US time). Go through the report, agree the next month's top three fixes and the posts' themes, and hear what jobs they want more of. Use what you hear to steer posts and fixes towards those jobs.
+1. **Website fixes.** Each month, make the fixes from the top of the website check sheet: speed (smaller images, fewer add-ons), search basics (page titles, descriptions, a page per service and per town served), and the things that stop calls (tappable phone number, a working quote form, reviews on the page). Make sure a backup exists before any change, and list what was changed in the report.
+2. **Monthly strategy call, about 30 minutes.** Book it for the owner's morning or after their workday (US time). Go through the report, agree the next month's top three fixes and the posts' themes, and hear what jobs they want more of. Use what you hear to steer posts and fixes towards those jobs.
 
 Time, a guess: 8–12 hours in the first month, then 4–6 hours a month, plus the call.
 

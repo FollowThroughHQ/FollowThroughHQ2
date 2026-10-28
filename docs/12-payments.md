@@ -16,9 +16,11 @@ Fees: Stripe takes a few percent of each payment, more for US cards on a Europea
 | Offer | How | When |
 |---|---|---|
 | Verified Business badge, $25 once | Badge payment link | In the "Passed" email, after the check (`11-verified-badge.md`) |
-| Starter, $49/month | Starter payment link | In the reply to their email asking for the plan (`01-business-plan.md`, "How every plan starts") |
+| Starter, $99/month | Starter payment link | In the reply to their email asking for the plan (`01-business-plan.md`, "How every plan starts") |
 | Growth, $199/month | Growth payment link | Same |
-| Done-for-you, from $499/month | A subscription made for that customer in Stripe, which emails them an invoice each month | Once the price is agreed in writing |
+| Done-for-you, $299/month | Done-for-you payment link | Same |
+
+Each plan link starts with a 30-day free trial: the customer adds their card, nothing is charged for 30 days, and Stripe charges the first month on day 31 unless they cancel first. Stripe emails them a reminder before the trial ends (step 5 below).
 
 The site never shows the links: they go out by email, after the check or the first conversation.
 
@@ -27,17 +29,18 @@ The site never shows the links: they go out by email, after the check or the fir
 Paste them here once they're made, so they're easy to find.
 
 - Badge ($25 once):
-- Starter ($49/month):
-- Growth ($199/month):
+- Starter ($99/month, 30 days free):
+- Growth ($199/month, 30 days free):
+- Done-for-you ($299/month, 30 days free):
 
 ## Setting it up (once)
 
 1. Go to stripe.com and click **Start now**. Sign up with your email and choose your country. Confirm your email.
 2. In the Stripe dashboard, click **Activate payments** (or **Complete your profile**). Choose **Individual / sole proprietor** unless you've registered a company, fill in your details, add the bank account for payouts and confirm your identity. Where it asks for the name customers see on their card statement, use **FOLLOWTHROUGH**.
 3. Make the badge link: **Product catalog** → **Add product**. Name: "Verified Business badge". Price: $25.00 USD, **One-off**. Save. Then **Payment links** → **New**, choose the badge, and under **Options** click **Add custom field**: a text field called "Business name", so you can tell who paid. Create the link and copy it.
-4. Make the plan links: **Add product** "Visibility Autopilot Starter", $49.00 USD, **Recurring**, **Monthly**. Make a payment link for it the same way, with the "Business name" field. Repeat for "Visibility Autopilot Growth" at $199.00.
-5. Turn on emails: **Settings** → **Customer emails**, and switch on **Successful payments** (receipts) and **Failed payments**. Under **Settings** → **Subscriptions and emails** (**Manage failed payments**), turn on retries and the email that asks the customer to update a failed card.
-6. Send the three links to Claude to add above.
+4. Make the plan links: **Add product** "Visibility Autopilot Starter", $99.00 USD, **Recurring**, **Monthly**. Make a payment link for it the same way, with the "Business name" field, and under **Options** tick **Include a free trial** and enter 30 days. Repeat for "Visibility Autopilot Growth" at $199.00 and "Visibility Autopilot Done-for-you" at $299.00.
+5. Turn on emails: **Settings** → **Customer emails**, and switch on **Successful payments** (receipts) and **Failed payments**. Under **Settings** → **Subscriptions and emails** (**Manage failed payments**), turn on retries and the email that asks the customer to update a failed card. On the same page, switch on the email that reminds customers their free trial is ending (US rules expect a reminder before a free trial turns into a paid plan).
+6. Send the four links to Claude to add above.
 7. Test it: pay the badge link with your own card, check the receipt email, then refund it under **Payments** → the payment → **Refund**.
 
 ## The order and customer sheet
@@ -53,7 +56,7 @@ Real customer details stay in Google Sheets and never go into the project. If yo
 ## Day to day
 
 - **A payment comes in:** Stripe emails you. Fill in the paid date, amount and payment number (it starts with `pi_` or `py_`, on the payment's page in Stripe) in the sheet (`sheets/orders-and-customers.xlsx`, uploaded to Google Sheets).
-- **Done-for-you:** **Customers** → **Add customer** (name, email). On the customer, click **Create subscription**, add a product "Visibility Autopilot Done-for-you" with the agreed monthly price in USD, and under payment choose **Email invoice to the customer**. Stripe sends them a bill each month.
+- **A customer cancels during the free month:** **Customers** → the customer → their subscription → **Cancel subscription** → **Immediately**. They're never charged.
 - **A customer cancels by email:** **Customers** → the customer → their subscription → **Cancel subscription** → **At the end of the current period**. They keep the month they've paid for and aren't charged again, as the service terms promise. Fill in the dates in the sheet.
 - **A payment fails:** Stripe retries and emails the customer. If it still fails, the service terms let you stop the service; email them first.
 

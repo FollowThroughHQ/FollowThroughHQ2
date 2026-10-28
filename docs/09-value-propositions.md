@@ -40,7 +40,7 @@ Most jobs aren't lost to a cheaper quote. They're lost to silence after the quot
 4. **Done-for-you follow-up (paid per booked job):** we follow up on their quotes for them. They pay only when a quote becomes a job, so there's nothing to lose.
 
 Alongside the ladder, a monthly service:
-- **Visibility Autopilot ($49 / $199 / from $499 a month):** their business listed correctly on 40+ directories, their Google profile kept active (weekly posts, review replies, photos, new-review alerts) and their website checked and fixed. Its edge over the alternatives: **one bill** instead of a listings tool, a review tool, a website checker and a freelancer, and **results in plain numbers** (calls, reviews, listings fixed) instead of ranking charts. Month to month, no setup fee, free cancellation. Details in `10-visibility-autopilot.md`.
+- **Visibility Autopilot ($99 / $199 / $299 a month, first 30 days free):** their business listed correctly on 40+ directories, their Google profile kept active (weekly posts, review replies, photos, new-review alerts) and their website checked and fixed. Its edge over the alternatives: **one bill** instead of a listings tool, a review tool, a website checker and a freelancer, and **results in plain numbers** (calls, reviews, listings fixed) instead of ranking charts. 30 days free, then month to month, no setup fee, free cancellation. Details in `10-visibility-autopilot.md`.
 
 ## Why us, not the alternatives
 - **Software companies' free guides** (Housecall Pro, Jobber, Joist): good tools and templates, but their guides are general and built to sell software. They don't teach what to say to win the job.
