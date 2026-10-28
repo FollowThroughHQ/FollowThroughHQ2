@@ -1,6 +1,6 @@
 # Verified Business badge: how it runs and what's left to launch
 
-A one-time $49 badge for a business's website that tells visitors "this business is real, reachable and trustworthy". It's sold on `/badge`, and each badge links to the business's profile in the directory at `/verified`. The rules for customers are in the badge section of `/service-terms`, and the Privacy page has a matching section.
+A one-time $25 badge for a business's website that tells visitors "this business is real, reachable and trustworthy". It's sold on `/badge`, and each badge links to the business's profile in the directory at `/verified`. The rules for customers are in the badge section of `/service-terms`, and the Privacy page has a matching section.
 
 There's one level for now: **Verified Business**, meaning identity, registration, website address and contact details confirmed.
 
@@ -45,7 +45,7 @@ To take a business down (it closed, lost its Google verification or misuses the 
 
 **Passed, here's the payment link:**
 
-> Hi [name], good news: [business] passed the Verified Business check. Your Google profile is verified, your registration is on record, and your website and contact details match. To get your badge, pay the one-time $49 here: [payment link]. Your badge and directory profile follow as soon as it's paid.
+> Hi [name], good news: [business] passed the Verified Business check. Your Google profile is verified, your registration is on record, and your website and contact details match. To get your badge, pay the one-time $25 here: [payment link]. Your badge and directory profile follow as soon as it's paid.
 
 **Didn't pass:**
 
@@ -67,7 +67,7 @@ The original idea was "a verified Google page means verified". But the badge tel
 
 ## To do before selling
 
-1. Choose a payment provider (the same one as Visibility Autopilot, step 3 in `10-visibility-autopilot.md`) and make a one-time $49 payment link to paste into the "Passed" email. Then add the provider's name to the Privacy page and the service terms.
+1. Choose a payment provider (the same one as Visibility Autopilot, step 3 in `10-visibility-autopilot.md`) and make a one-time $25 payment link to paste into the "Passed" email. Then add the provider's name to the Privacy page and the service terms.
 2. Have a lawyer read the badge section of the service terms and the Privacy page (see `04-legal-checklist.md`).
 3. Make a simple order sheet (a Google Sheet): business, date ordered, each check's result and where you looked, paid date, `id`, removed date.
 4. Ask Emil to put the changes live.
