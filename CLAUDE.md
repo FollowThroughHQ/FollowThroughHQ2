@@ -20,9 +20,9 @@ Pages are rendered client-side from data arrays, each at its own path (`/`, `/gu
 - `EX` — the made-up example stories in the home page's "How it plays out" section. Replace them with real ones (with permission) as owners share them; never present invented ones as real.
 - `VB` — businesses that passed the Verified Business badge check, shown at `/verified` (`docs/11`).
 - `CONTACT` — contact email.
-- `FORM_URL` — where the signup form posts: `/api/playbook` on the same app (`routes/api.php`), which emails the request to `MAIL_TO` (empty = `MAIL_FROM_ADDRESS`) through Brevo SMTP. Settings live in `.env` (git-ignored); setup in `docs/08-signup-server.md`.
+- `FORM_URL` — where the signup form posts: `/api/playbook` on the same app (`routes/api.php`), which emails the visitor their trade's playbook PDF (one a day per address) and a note to `MAIL_TO` (empty = `MAIL_FROM_ADDRESS`) through Brevo SMTP. Settings live in `.env` (git-ignored); setup in `docs/08-signup-server.md`.
 
-The free playbook each signup asks for is a two-page PDF per trade: text in `playbooks/<slug>.md` (made from `playbooks/_template.md`), PDFs in `public/playbooks/`, remade with `php artisan playbooks` (needs Google Chrome). `PlaybookTest` fails if a trade in `T` has no playbook. Structure in `docs/03`, how to send them in `docs/08`.
+The free playbook each signup asks for is a two-page PDF per trade: text in `playbooks/<slug>.md` (made from `playbooks/_template.md`), PDFs in `public/playbooks/`, remade with `php artisan playbooks` (needs Google Chrome). `PlaybookTest` fails if a trade in `T` has no playbook. Structure in `docs/03`, how they're emailed in `docs/08`.
 
 **Adding a trade:** add an entry to `T`, a matching one to `FULL` under the same slug, and its playbook; tiles, guide page and related links appear automatically (details in `docs/02-website.md`).
 

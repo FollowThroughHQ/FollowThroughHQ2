@@ -1,12 +1,10 @@
 # Running the app and the signup emails
 
-The site is a small Laravel app. It serves the page, and it has one other job: the "Send me the playbook" form posts to `/api/playbook`, and the app emails the request to you. You reply to that email with the playbook. No login, no database.
+The site is a small Laravel app. It serves the page, and it has two other jobs: the "Send me the playbook" form posts to `/api/playbook`, and the badge order form to `/api/badge`. No login, no database.
 
-To send it: hit Reply and attach the trade's PDF from `public/playbooks/` (for example `roofing.pdf`), or, once the site is live, paste its link, `https://followthroughguides.com/playbooks/roofing.pdf`. A request from the home page says "trade" instead of a trade's name, so ask which trade they're in, or send the link to the guides page. For example:
+When someone asks for a playbook, the app sends two emails at once: the visitor gets an email with their trade's PDF from `public/playbooks/` attached and a link to the guide, and you get a short note saying who asked for which trade. On a guide page the trade is that guide's; on the home page and the calculator the visitor picks it from a list. If the visitor replies, the reply comes to you (`MAIL_TO`, or `MAIL_FROM_ADDRESS` if that's empty).
 
-> Hi, thanks for asking! Here's your free roofing playbook: [link or attachment]. It has what to say from the first call to the review, plus answers to the 7 objections roofers hear most. If you have a question, just reply to this email.
-
-It only ever emails you (at `MAIL_FROM_ADDRESS`, or `MAIL_TO` if you set it), never the address a visitor types, so nobody can use it to spam other people. Each visitor can send 5 requests a minute.
+To stop anyone using the form to flood someone else's inbox, each email address gets at most one playbook a day, and each visitor can send 5 requests a minute. A second request the same day only sends you the note, which says so; reply to it if you want to send the second playbook by hand. The visitor's email says how to unsubscribe (reply "unsubscribe"), so remove those people from any list you keep.
 
 ## Try it on your Mac
 

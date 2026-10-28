@@ -42,7 +42,7 @@ Old `#` links (`/#roofing`, `/#home-contact`) still open the right page, so link
 - **Checkmarks:** each step has a completion button. Progress is saved in the visitor's browser (`localStorage`, key `ft:<slug>`). It never leaves their device.
 - **Related guides:** open guides in the same category in a new tab.
 - **Lost quotes calculator:** at `/calculator` (`calc()` and `wireCalc()`). The visitor enters quotes a month, jobs won out of 10 and average job price, and sees what winning 1, 2 or 3 more in 10 adds per month and year.
-- **Signup form:** posts the visitor's email to `/api/playbook` (`routes/api.php`), which emails the request to you (setup in `08-signup-server.md`). `FORM_URL` holds that path. See `06-google-sheets-forms.md` to also save signups to a Google Sheet.
+- **Signup form:** posts the visitor's email and trade to `/api/playbook` (`routes/api.php`), which emails the visitor their trade's playbook PDF and you a note (setup in `08-signup-server.md`). `signup(t)` and `wireSignup(t)` build and send it: on a guide page `t` is that trade; without `t` (home page, calculator) the form shows a trade list built from `CATS` and `T`. `FORM_URL` holds that path. See `06-google-sheets-forms.md` to also save signups to a Google Sheet.
 - **Dark mode:** colors are CSS variables and follow the visitor's system setting.
 
 ## Known limitations

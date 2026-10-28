@@ -1,21 +1,53 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 
-// The site's signup form posts here. The request lands in your inbox; hit Reply to send the playbook (public/playbooks/, docs/08).
+// The site's signup form posts here. The visitor gets their trade's playbook (public/playbooks/) by email, and you get a note.
+// Each address gets one playbook a day at most, so nobody can use the form to flood someone's inbox.
 Route::post('/playbook', function (Request $request) {
     $data = $request->validate([
         'email' => ['required', 'email', 'max:254'],
-        'guide' => ['required', 'string', 'max:100'],
+        'trade' => ['required', Rule::in(array_map(fn ($pdf) => basename($pdf, '.pdf'), File::glob(public_path('playbooks/*.pdf'))))],
         'consent' => ['accepted'],
     ]);
+    $trade = Str::between(File::lines(base_path("playbooks/{$data['trade']}.md"))->first(), '# The ', ' Playbook');
+    $send = Cache::add('playbook:'.sha1(strtolower($data['email'])), true, now()->addDay());
 
-    Mail::raw("Please send me the free {$data['guide']} playbook. My email: {$data['email']}", function ($message) use ($data) {
+    if ($send) {
+        $guide = url($data['trade']);
+        $home = url('/');
+        $text = <<<TEXT
+            Hi,
+
+            Thanks for asking! Your free {$trade} playbook is attached: what to say from the first call to the five-star review, with answers to the objections you'll hear most.
+
+            The full start-up guide is here: {$guide}
+
+            Questions? Just reply to this email.
+
+            FollowThrough
+
+            You're getting this because you asked for the playbook at {$home}. To get no more emails, reply with "unsubscribe".
+            TEXT;
+        Mail::raw($text, function ($message) use ($data, $trade) {
+            $message->to($data['email'])
+                ->replyTo(config('mail.to'))
+                ->subject("Your free {$trade} playbook")
+                ->attach(public_path("playbooks/{$data['trade']}.pdf"));
+        });
+    }
+
+    $note = $send ? 'It was emailed to them automatically.' : 'They already got a playbook in the last day, so this one wasn\'t sent. Reply to send it by hand.';
+    Mail::raw("{$data['email']} asked for the free {$trade} playbook. {$note}", function ($message) use ($data, $trade) {
         $message->to(config('mail.to'))
             ->replyTo($data['email'])
-            ->subject('Free playbook: '.$data['guide']);
+            ->subject('Free playbook: '.$trade);
     });
 
     return response()->noContent();

@@ -7,21 +7,33 @@ use Tests\TestCase;
 
 class PlaybookTest extends TestCase
 {
-    public function test_signup_emails_the_owner_and_rejects_bad_input(): void
+    public function test_signup_emails_the_playbook_and_a_note_and_rejects_bad_input(): void
     {
         config(['mail.to' => 'owner@example.com']);
-        $sent = fn () => Mail::mailer()->getSymfonyTransport()->messages();
+        $sent = fn () => Mail::mailer()->getSymfonyTransport()->messages()->map->getOriginalMessage();
 
-        $this->postJson('/api/playbook', ['email' => 'not-an-email', 'guide' => 'Roofing', 'consent' => true])->assertStatus(422);
-        $this->postJson('/api/playbook', ['email' => 'jo@example.com', 'guide' => 'Roofing', 'consent' => false])->assertStatus(422);
+        $this->postJson('/api/playbook', ['email' => 'not-an-email', 'trade' => 'roofing', 'consent' => true])->assertStatus(422);
+        $this->postJson('/api/playbook', ['email' => 'jo@example.com', 'trade' => 'roofing', 'consent' => false])->assertStatus(422);
+        $this->postJson('/api/playbook', ['email' => 'jo@example.com', 'trade' => '../../.env', 'consent' => true])->assertStatus(422);
         $this->assertCount(0, $sent());
 
-        $this->postJson('/api/playbook', ['email' => 'jo@example.com', 'guide' => 'Roofing', 'consent' => true])->assertNoContent();
+        $this->postJson('/api/playbook', ['email' => 'jo@example.com', 'trade' => 'roofing', 'consent' => true])->assertNoContent();
 
-        $email = $sent()->first()->getOriginalMessage();
-        $this->assertSame('owner@example.com', $email->getTo()[0]->getAddress());
-        $this->assertSame('jo@example.com', $email->getReplyTo()[0]->getAddress());
-        $this->assertSame('Free playbook: Roofing', $email->getSubject());
+        [$playbook, $note] = $sent()->all();
+        $this->assertSame('jo@example.com', $playbook->getTo()[0]->getAddress());
+        $this->assertSame('owner@example.com', $playbook->getReplyTo()[0]->getAddress());
+        $this->assertSame('Your free Roofing playbook', $playbook->getSubject());
+        $this->assertSame('roofing.pdf', $playbook->getAttachments()[0]->getFilename());
+        $this->assertStringContainsString('unsubscribe', $playbook->getTextBody());
+        $this->assertSame('owner@example.com', $note->getTo()[0]->getAddress());
+        $this->assertSame('jo@example.com', $note->getReplyTo()[0]->getAddress());
+        $this->assertSame('Free playbook: Roofing', $note->getSubject());
+
+        // A second request the same day only sends you a note, so the form can't flood an inbox.
+        $this->postJson('/api/playbook', ['email' => 'JO@example.com', 'trade' => 'hvac', 'consent' => true])->assertNoContent();
+        $this->assertCount(3, $sent());
+        $this->assertSame('owner@example.com', $sent()->last()->getTo()[0]->getAddress());
+        $this->assertStringContainsString('wasn\'t sent', $sent()->last()->getTextBody());
     }
 
     // Every trade in T has a playbook and its PDF (`php artisan playbooks` makes the PDFs).

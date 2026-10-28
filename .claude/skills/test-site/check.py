@@ -62,11 +62,12 @@ function tabs(out){var p=out.tabs=[],b;go("/");b=document.querySelectorAll("#tab
     if(document.getElementById("q").textContent!==OBJ[i][1]||document.getElementById("a").textContent!==OBJ[i][2])p.push("clicking the \""+b[i].textContent+"\" tab doesn't show its objection")}
   var e=errs();if(e.length)p.push("JavaScript error: "+e.join("; "))}
 function signup(out){var p=out.signup=[];go("/#signup");
-  var f=document.getElementById("f"),em=document.getElementById("em"),ok=document.getElementById("ok"),st=document.getElementById("fs"),b=f&&f.querySelector("button");
-  if(!b||!em||!ok){p.push("the signup form is missing");return finish(out)}
+  var f=document.getElementById("f"),em=document.getElementById("em"),ok=document.getElementById("ok"),tr=document.getElementById("tr"),st=document.getElementById("fs"),b=f&&f.querySelector("button");
+  if(!b||!em||!ok||!tr){p.push("the signup form or its trade list is missing");return finish(out)}
   var sent=0,of=window.fetch;window.fetch=function(){sent++;return of.apply(window,arguments)};
   em.value="site-check@example.com";ok.checked=false;b.click();if(sent)p.push("it sends with the consent box unticked");
-  em.value="not-an-email";ok.checked=true;sent=0;b.click();if(sent)p.push("it sends with a bad email address");sent=0;
+  em.value="site-check@example.com";ok.checked=true;tr.value="";sent=0;b.click();if(sent)p.push("it sends with no trade chosen");
+  tr.value=tr.options[1].value;em.value="not-an-email";sent=0;b.click();if(sent)p.push("it sends with a bad email address");sent=0;
   if(!__ftCfg.send||p.length){out.unsent=1;return finish(out)}
   em.value="site-check@example.com";b.click();if(!sent){p.push("a good email with the box ticked isn't sent");return finish(out)}
   var n=0;(function wait(){if(/^Thanks!/.test(st.textContent)&&f.style.display==="none")return finish(out);
@@ -137,8 +138,11 @@ def start_app():
     url = 'http://127.0.0.1:%d' % s.getsockname()[1]
     s.close()
     env = dict(os.environ, MAIL_MAILER='log', MAIL_LOG_CHANNEL='stderr', MAIL_TO='site-check@example.com', CACHE_STORE='array')
+    # The log goes to a file: an email with the playbook PDF attached would fill a pipe and freeze the app.
+    log = tempfile.TemporaryFile('w+')
     app = subprocess.Popen([php, '-S', url[7:], os.path.join(ROOT, 'vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php')],
-                           cwd=os.path.join(ROOT, 'public'), env=env, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, text=True)
+                           cwd=os.path.join(ROOT, 'public'), env=env, stdout=subprocess.DEVNULL, stderr=log, text=True)
+    app.log = log
     for _ in range(50):
         if fetch(url + '/')[0] == 200:
             return app, url
@@ -217,8 +221,8 @@ if local and not app:
     form = base + '/'
 try:
     # The server must turn bad signups away, not only the browser.
-    for data, what in (({'email': 'not-an-email', 'guide': 'trade', 'consent': True}, 'a bad email address'),
-                       ({'email': 'site-check@example.com', 'guide': 'trade', 'consent': False}, 'the consent box unticked')):
+    for data, what in (({'email': 'not-an-email', 'trade': 'roofing', 'consent': True}, 'a bad email address'),
+                       ({'email': 'site-check@example.com', 'trade': 'roofing', 'consent': False}, 'the consent box unticked')):
         status, err = fetch(urllib.parse.urljoin(form, '/api/playbook'), data=data)
         if status and status != 422:
             fails.append('signup: the server doesn\'t turn away a signup with %s (status %s, expected 422)' % (what, status))
@@ -313,9 +317,11 @@ try:
 finally:
     if app:
         app.terminate()
-        log = app.communicate()[1]
-if sent and log.count('Subject: Free playbook:') < sent:
-    fails.append('signup: the thank-you message showed, but no email was written to the test copy\'s log')
+        app.wait()
+        app.log.seek(0)
+        log = app.log.read()
+if sent and min(log.count('Subject: Free playbook:'), log.count('Subject: Your free')) < sent:
+    fails.append('signup: the thank-you message showed, but the playbook email or your note wasn\'t written to the test copy\'s log')
 print('Screenshots at phone width: ' + os.path.relpath(SHOTS))
 
 for link, where in sorted(external.items()):
