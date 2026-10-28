@@ -16,7 +16,7 @@ Name or company, address, country, governing law, last-updated date, contact ema
 ## Update when things change
 - When signups go to Google Sheets, add Google as a service provider in the privacy policy.
 - When analytics are added, describe them and add a cookie banner if required.
-- When you sell anything, add refund terms and a payment provider mention.
+- Paid offers: refund terms are in the service terms, and Stripe is named as the payment provider on the Privacy page and the service terms (2026-10-28).
 - When you add testimonials, get written permission.
 
 ## Email compliance

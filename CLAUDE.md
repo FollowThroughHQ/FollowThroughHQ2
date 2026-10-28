@@ -28,7 +28,7 @@ Step-completion checkmarks persist in the visitor's `localStorage` under `ft:<sl
 
 ## Docs
 
-`docs/01` business plan · `02` website architecture and how to edit · `03` content and sales structure · `04` legal checklist · `05` GitHub repo (its Pages hosting is outdated) · `06` Google Sheets signup integration · `07` roadmap · `08` running the app, signup emails, hosting · `09` value propositions · `10` Visibility Autopilot (the paid service: plans and launch to-do list; how each plan works is in `01`) · `11` Verified Business badge (the $25 badge: the check, emails, directory, launch to-do list). Read `02-website.md` before changing the site; content work should follow the structures in `03`.
+`docs/01` business plan · `02` website architecture and how to edit · `03` content and sales structure · `04` legal checklist · `05` GitHub repo (its Pages hosting is outdated) · `06` Google Sheets signup integration · `07` roadmap · `08` running the app, signup emails, hosting · `09` value propositions · `10` Visibility Autopilot (the paid service: plans and launch to-do list; how each plan works is in `01`) · `11` Verified Business badge (the $25 badge: the check, emails, directory, launch to-do list) · `12` taking payments with Stripe. `docs/sheets/orders-and-customers.xlsx` is the order and customer sheet, kept as a blank copy to upload to Google Sheets (real customer data stays in Google, not in the project). Read `02-website.md` before changing the site; content work should follow the structures in `03`.
 
 ## Current gaps (deliberate, see docs)
 

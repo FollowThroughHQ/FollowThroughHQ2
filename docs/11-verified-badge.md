@@ -14,7 +14,7 @@ New service businesses with no reviews, no name people know and no track record.
 2. It arrives in your inbox with the subject "Badge order: [business name]". Hit Reply to answer the customer.
 3. You check the business (below), usually within 2 business days, as the page promises.
 4. **Passes:** reply with the payment link (template below). **Doesn't pass:** reply with what was missing. They pay nothing.
-5. Once they've paid: add them to the directory, then email the badge (template below).
+5. Once they've paid (Stripe emails you): add them to the directory, then email the badge (template below).
 
 The customer pays only after passing, so there are no refunds to handle.
 
@@ -67,7 +67,7 @@ The original idea was "a verified Google page means verified". But the badge tel
 
 ## To do before selling
 
-1. Choose a payment provider (the same one as Visibility Autopilot, step 3 in `10-visibility-autopilot.md`) and make a one-time $25 payment link to paste into the "Passed" email. Then add the provider's name to the Privacy page and the service terms.
+1. Set up Stripe and make the one-time $25 payment link for the "Passed" email (`12-payments.md`). Stripe is already named on the Privacy page and the service terms.
 2. Have a lawyer read the badge section of the service terms and the Privacy page (see `04-legal-checklist.md`).
-3. Make a simple order sheet (a Google Sheet): business, date ordered, each check's result and where you looked, paid date, `id`, removed date.
+3. Upload the order sheet to Google Sheets: the "Badge orders" tab of `sheets/orders-and-customers.xlsx`.
 4. Ask Emil to put the changes live.

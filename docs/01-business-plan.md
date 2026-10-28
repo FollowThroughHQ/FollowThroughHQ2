@@ -71,7 +71,7 @@ Later income options: affiliate links for quoting and scheduling software (Jobbe
 - Lean on async channels (email, Facebook and Instagram messages, Google Business messages, contact forms).
 - Be upfront about being in Europe. Lead with what you do.
 - A US virtual number (OpenPhone or similar, about $15/month) makes calls easy. Schedule calls in their early morning or after 4 pm (your evening).
-- Take payments with Stripe, PayPal or a merchant-of-record platform (Lemon Squeezy, Gumroad), which can handle sales tax and VAT. Check availability in your country.
+- Payments go through Stripe, which works from Europe and charges US customers in dollars (`12-payments.md`). Merchant-of-record platforms like Lemon Squeezy were ruled out because they don't allow services.
 
 ## Outreach rules (not legal advice)
 - **Email (CAN-SPAM):** B2B cold email is allowed with a real sender identity, a physical mailing address and a working opt-out honored promptly. Use a separate domain for outreach.

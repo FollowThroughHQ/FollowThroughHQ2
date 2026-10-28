@@ -20,10 +20,10 @@ Step by step, in `01-business-plan.md` (onboarding, then Starter, Growth and Don
 
 1. Write the list of 40+ directories for local US service businesses, and check each is still running and free to list on. The site promises 40+, so the list has to hold at least that many.
 2. Make the three Google Sheets: the website check, the listing check and the monthly report template.
-3. Choose a payment provider (Stripe, or Lemon Squeezy, which also handles sales tax) and check it works from your country. Set up monthly subscriptions for $49 and $199, and a way to bill a custom Done-for-you price. Then add the provider's name to the Privacy page and the service terms.
+3. Set up Stripe: the account, the $49 and $199 monthly payment links, and how to bill a custom Done-for-you price (`12-payments.md`). Stripe is already named on the Privacy page and the service terms.
 4. Check whether Google still lets businesses answer questions (Q&A) on their profile. It was left off the page because Google seemed to be switching it off in late 2025.
 5. Have a lawyer read the service terms and the Privacy page's Visibility Autopilot section (see `04-legal-checklist.md`), and ask an accountant how to invoice US customers and whether VAT applies.
-6. Keep a simple customer list (a Google Sheet): business, plan, start date, accesses granted, cancellation date.
+6. Upload the customer list to Google Sheets: the "Autopilot customers" tab of `sheets/orders-and-customers.xlsx` (how: `12-payments.md` and the sheet's "Start here" tab).
 7. Ask Emil to put the changes live.
 
 ## To do once customers come
