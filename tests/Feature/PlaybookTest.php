@@ -23,4 +23,17 @@ class PlaybookTest extends TestCase
         $this->assertSame('jo@example.com', $email->getReplyTo()[0]->getAddress());
         $this->assertSame('Free playbook: Roofing', $email->getSubject());
     }
+
+    // Every trade in T has a playbook and its PDF (`php artisan playbooks` makes the PDFs).
+    public function test_every_trade_has_a_playbook(): void
+    {
+        preg_match_all('/^\{s:"([a-z-]+)"/m', file_get_contents(resource_path('views/home.blade.php')), $trades);
+        $this->assertNotEmpty($trades[1]);
+
+        foreach ($trades[1] as $slug) {
+            $this->assertFileExists(base_path("playbooks/$slug.md"));
+            $this->assertFileExists(public_path("playbooks/$slug.pdf"));
+            $this->assertStringContainsString("followthroughguides.com/$slug\"", file_get_contents(base_path("playbooks/$slug.md")));
+        }
+    }
 }

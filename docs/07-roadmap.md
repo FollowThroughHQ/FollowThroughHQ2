@@ -4,7 +4,7 @@
 1. Fill in placeholders and publish on GitHub Pages with a custom domain.
 2. Connect the signup form to Google Sheets (Option A or B).
 3. Write the About page with a real photo and background.
-4. Create the roofing one-page playbook PDF and send it to the first 50 targets.
+4. Send the roofing playbook PDF (`public/playbooks/roofing.pdf`) to the first 50 targets.
 
 ## Next
 - Expand HVAC and one more trade to roofing's depth.

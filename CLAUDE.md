@@ -22,7 +22,9 @@ Pages are rendered client-side from data arrays, each at its own path (`/`, `/gu
 - `CONTACT` — contact email.
 - `FORM_URL` — where the signup form posts: `/api/playbook` on the same app (`routes/api.php`), which emails the request to `MAIL_TO` (empty = `MAIL_FROM_ADDRESS`) through Brevo SMTP. Settings live in `.env` (git-ignored); setup in `docs/08-signup-server.md`.
 
-**Adding a trade:** add an entry to `T` and a matching one to `FULL` under the same slug; tiles, guide page and related links appear automatically (details in `docs/02-website.md`).
+The free playbook each signup asks for is a two-page PDF per trade: text in `playbooks/<slug>.md` (made from `playbooks/_template.md`), PDFs in `public/playbooks/`, remade with `php artisan playbooks` (needs Google Chrome). `PlaybookTest` fails if a trade in `T` has no playbook. Structure in `docs/03`, how to send them in `docs/08`.
+
+**Adding a trade:** add an entry to `T`, a matching one to `FULL` under the same slug, and its playbook; tiles, guide page and related links appear automatically (details in `docs/02-website.md`).
 
 Step-completion checkmarks persist in the visitor's `localStorage` under `ft:<slug>`. Dark mode is pure CSS variables keyed off `prefers-color-scheme` / `data-theme`.
 

@@ -2,6 +2,10 @@
 
 The site is a small Laravel app. It serves the page, and it has one other job: the "Send me the playbook" form posts to `/api/playbook`, and the app emails the request to you. You reply to that email with the playbook. No login, no database.
 
+To send it: hit Reply and attach the trade's PDF from `public/playbooks/` (for example `roofing.pdf`), or, once the site is live, paste its link, `https://followthroughguides.com/playbooks/roofing.pdf`. A request from the home page says "trade" instead of a trade's name, so ask which trade they're in, or send the link to the guides page. For example:
+
+> Hi, thanks for asking! Here's your free roofing playbook: [link or attachment]. It has what to say from the first call to the review, plus answers to the 7 objections roofers hear most. If you have a question, just reply to this email.
+
 It only ever emails you (at `MAIL_FROM_ADDRESS`, or `MAIL_TO` if you set it), never the address a visitor types, so nobody can use it to spam other people. Each visitor can send 5 requests a minute.
 
 ## Try it on your Mac

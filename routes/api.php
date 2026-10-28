@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
-// The site's signup form posts here. The request lands in your inbox; hit Reply to send the playbook.
+// The site's signup form posts here. The request lands in your inbox; hit Reply to send the playbook (public/playbooks/, docs/08).
 Route::post('/playbook', function (Request $request) {
     $data = $request->validate([
         'email' => ['required', 'email', 'max:254'],

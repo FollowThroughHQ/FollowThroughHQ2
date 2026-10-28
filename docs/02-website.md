@@ -35,7 +35,8 @@ Old `#` links (`/#roofing`, `/#home-contact`) still open the right page, so link
 ## How to add a new trade
 1. Add an entry to `T` with a unique slug, a category index and seven tips.
 2. Add an entry to `FULL` under the same slug (copy the roofing entry and rewrite it).
-3. Reload. The tile, guide page and related-guide links appear automatically.
+3. Write its playbook: copy `playbooks/_template.md` to `playbooks/<slug>.md`, fill it in, and run `php artisan playbooks <slug>` to make the PDF (`03-content-and-sales.md`).
+4. Reload. The tile, guide page and related-guide links appear automatically.
 
 ## Features
 - **Checkmarks:** each step has a completion button. Progress is saved in the visitor's browser (`localStorage`, key `ft:<slug>`). It never leaves their device.

@@ -14,6 +14,17 @@
 
 Roofing is the model guide (fullest). Other trades are shorter and can be expanded to match.
 
+## Playbooks (the free download)
+Every trade has a two-page playbook, the one the signup form promises: what to say from the first call to the review. Each follows `playbooks/_template.md`, in this order:
+1. The first call or message: questions that size up the job, two lines to say.
+2. Presenting the quote: what to show and itemize for this trade.
+3. The 7 objections and what to say: seven of the eight in the guide's objection library, word for word, so the playbook and the website agree.
+4. Follow up on day 2, day 5 and day 12, as texts.
+5. Asking for the review and the referral.
+6. Three rules that keep you out of trouble, from the guide's mistakes and licensing notes.
+
+The text lives in `playbooks/<slug>.md`. After any change, run `php artisan playbooks` (or `php artisan playbooks roofing` for one) to remake the PDFs in `public/playbooks/`; it uses Google Chrome on the Mac. Check that each still fits on two pages. Once live, each PDF is at `followthroughguides.com/playbooks/<slug>.pdf`. They make the same claims as the guides, so they need the same checks before promoting.
+
 ## Sales hub topics
 1. Answering the first call or message
 2. Presenting a quote
