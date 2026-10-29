@@ -11,3 +11,4 @@ Good ideas to do later, oldest first. Claude adds to this file under the "Ideas"
 - 2026-10-25 · 3–5 short emails after signup over two weeks: day 1 playbook, day 3 follow-up tip, day 7 offer (Claude)
 - 2026-10-25 · Count visitors with Plausible or similar, to see which guides people read (no cookie banner needed) (Claude)
 - 2026-10-25 · A printable checklist for each guide (Claude)
+- 2026-10-29 · A page on the site that explains the free 5-point check, to link from outreach emails once replies show it works (Claude)
