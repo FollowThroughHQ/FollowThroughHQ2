@@ -3,7 +3,6 @@
 Good ideas to do later, oldest first. Claude adds to this file under the "Ideas" rule in `CLAUDE.md`; an idea comes out once it becomes a task or is dropped.
 
 - 2026-10-25 · Rewrite `docs/05` for a PHP host, since GitHub Pages can't run the Laravel app (Claude)
-- 2026-10-25 · Check the unconfirmed claims listed per guide in PR #1, now that those guides are on the main page (Claude)
 - 2026-10-25 · Let the owner put changes on the live website himself, without Emil running the deploy (Claude)
 - 2026-10-25 · A library of ready-to-copy messages (follow-up texts, emails, review requests), each with a "Copy" button for use on a phone (Claude)
 - 2026-10-25 · Something to buy on the site: the $29–49 playbook or the $200–500 custom-script help, even one page with a price and "book a 15-minute call" to test if people pay (Claude)
