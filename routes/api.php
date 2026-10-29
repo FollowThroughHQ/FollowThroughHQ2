@@ -53,6 +53,29 @@ Route::post('/playbook', function (Request $request) {
     return response()->noContent();
 })->middleware('throttle:5,1');
 
+// The Visibility Autopilot form posts here. Reply with the next steps (docs/01-business-plan.md, "How every plan starts").
+Route::post('/plan', function (Request $request) {
+    $data = $request->validate([
+        'plan' => ['required', Rule::in(['Starter', 'Growth', 'Done-for-you', 'Not sure yet'])],
+        'name' => ['required', 'string', 'max:120'],
+        'business' => ['required', 'string', 'max:120'],
+        'email' => ['required', 'email', 'max:254'],
+        'phone' => ['nullable', 'string', 'max:40'],
+        'message' => ['nullable', 'string', 'max:2000'],
+        'consent' => ['accepted'],
+    ]);
+
+    $phone = $data['phone'] ?? 'not given';
+    $message = $data['message'] ?? 'none';
+    Mail::raw("Visibility Autopilot inquiry\n\nPlan: {$data['plan']}\nName: {$data['name']}\nBusiness: {$data['business']}\nEmail: {$data['email']}\nPhone: {$phone}\n\nMessage:\n{$message}\n\nReply to this email to answer them. How every plan starts: docs/01-business-plan.md", function ($mail) use ($data) {
+        $mail->to(config('mail.to'))
+            ->replyTo($data['email'])
+            ->subject("Visibility Autopilot ({$data['plan']}): {$data['business']}");
+    });
+
+    return response()->noContent();
+})->middleware('throttle:5,1');
+
 // The badge order form posts here. Check the business, then reply with the result (docs/11-verified-badge.md).
 Route::post('/badge', function (Request $request) {
     $data = $request->validate([

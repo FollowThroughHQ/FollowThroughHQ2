@@ -21,7 +21,7 @@ New businesses often lack leads before they lack closing skill, so alongside the
 - It leads naturally into the sales offers: more calls from being found, then more of them won with the scripts.
 
 ### How every plan starts
-1. The owner emails which plan they want. Reply with the next steps and the payment link. The first 30 days are free: Stripe takes their card now and charges on day 31, unless they cancel first. One free month per business.
+1. The owner sends the form on `/visibility` (plan, name, business, email, phone if given, a message), which arrives as an email; reply to it with the next steps and the payment link. The first 30 days are free: Stripe takes their card now and charges on day 31, unless they cancel first. One free month per business.
 2. Collect the business details once: name, address, phone, hours, services, service area, license numbers where shown, logo and 5–10 photos of their work. These go in the customer list, and every listing is copied from them so they match exactly.
 3. Ask the owner to add you as a manager of their Google Business Profile (all plans, so the report can show their numbers) and to Google Search Console for their website (free; Done-for-you also needs access to the website itself).
 4. Do the first full check (below) and send it within the first week.

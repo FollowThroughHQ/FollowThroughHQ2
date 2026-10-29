@@ -16,7 +16,7 @@ Fees: Stripe takes a few percent of each payment, more for US cards on a Europea
 | Offer | How | When |
 |---|---|---|
 | Verified Business badge, $25 once | Badge payment link | In the "Passed" email, after the check (`11-verified-badge.md`) |
-| Starter, $99/month | Starter payment link | In the reply to their email asking for the plan (`01-business-plan.md`, "How every plan starts") |
+| Starter, $99/month | Starter payment link | In the reply to the inquiry they sent from the `/visibility` form (`01-business-plan.md`, "How every plan starts") |
 | Growth, $199/month | Growth payment link | Same |
 | Done-for-you, $299/month | Done-for-you payment link | Same |
 
@@ -36,7 +36,7 @@ Paste them here once they're made, so they're easy to find.
 ## Setting it up (once)
 
 1. Go to stripe.com and click **Start now**. Sign up with your email and choose your country. Confirm your email.
-2. In the Stripe dashboard, click **Activate payments** (or **Complete your profile**). Choose **Individual / sole proprietor** unless you've registered a company, fill in your details, add the bank account for payouts and confirm your identity. Where it asks for the name customers see on their card statement, use **FOLLOWTHROUGH**.
+2. In the Stripe dashboard, click **Activate payments** (or **Complete your profile**). Whose name the account is in isn't decided yet (step 1 of the to-do list in `10-visibility-autopilot.md`): choose **Company** and enter that company's details, fill in your details, add the bank account for payouts and confirm your identity. Where it asks for the name customers see on their card statement, use **FOLLOWTHROUGH**.
 3. Make the badge link: **Product catalog** → **Add product**. Name: "Verified Business badge". Price: $25.00 USD, **One-off**. Save. Then **Payment links** → **New**, choose the badge, and under **Options** click **Add custom field**: a text field called "Business name", so you can tell who paid. Create the link and copy it.
 4. Make the plan links: **Add product** "Visibility Autopilot Starter", $99.00 USD, **Recurring**, **Monthly**. Make a payment link for it the same way, with the "Business name" field, and under **Options** tick **Include a free trial** and enter 30 days. Repeat for "Visibility Autopilot Growth" at $199.00 and "Visibility Autopilot Done-for-you" at $299.00.
 5. Turn on emails: **Settings** → **Customer emails**, and switch on **Successful payments** (receipts) and **Failed payments**. Under **Settings** → **Subscriptions and emails** (**Manage failed payments**), turn on retries and the email that asks the customer to update a failed card. On the same page, switch on the email that reminds customers their free trial is ending (US rules expect a reminder before a free trial turns into a paid plan).
@@ -62,5 +62,5 @@ Real customer details stay in Google Sheets and never go into the project. If yo
 
 ## Still to check
 
-- Ask the accountant (step 5 in `10-visibility-autopilot.md`) whether you need to charge VAT or US sales tax, and how to record Stripe payouts. Stripe Tax can add tax automatically for about 0.5% per payment if it's needed.
+- Ask the accountant (step 6 in `10-visibility-autopilot.md`) whether you need to charge VAT or US sales tax, and how to record Stripe payouts. Stripe Tax can add tax automatically for about 0.5% per payment if it's needed.
 - Have the lawyer read the Stripe wording on the Privacy page and the service terms with the rest (`04-legal-checklist.md`).
