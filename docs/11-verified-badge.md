@@ -14,7 +14,10 @@ New service businesses with no reviews, no name people know and no track record.
 2. It arrives in your inbox with the subject "Badge order: [business name]". Hit Reply to answer the customer.
 3. You check the business (below), usually within 2 business days, as the page promises.
 4. **Passes:** reply with the payment link (template below). **Doesn't pass:** reply with what was missing. They pay nothing.
-5. Once they've paid (Stripe emails you): add them to the directory, then email the badge (template below).
+5. **Passed but not paid:** send a reminder on day 3, day 7 and day 14 after the result, then every 30 days, until they pay or say no (the reminder emails are in `15-customer-journeys.md`). After 90 days, recheck the business before the next reminder.
+6. Once they've paid (Stripe emails you): add them to the directory, wait until Emil has put it live, then email the badge (template below). Sent earlier, the badge would link to a profile that isn't on the website yet.
+
+The whole journey, including the yearly recheck and taking a profile down, is in `15-customer-journeys.md`.
 
 The customer pays only after passing, so there are no refunds to handle.
 

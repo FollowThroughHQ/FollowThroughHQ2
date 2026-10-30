@@ -21,8 +21,10 @@ New businesses often lack leads before they lack closing skill, so alongside the
 - It leads naturally into the sales offers: more calls from being found, then more of them won with the scripts.
 
 ### How every plan starts
+The emails for every step, from the inquiry to the customer leaving, are in `15-customer-journeys.md`. The work sheets (business details, directory list, listing check, website check, report) are one Google copy of `sheets/autopilot-customer.xlsx` per customer.
+
 1. The owner sends the form on `/visibility` (plan, name, business, email, phone if given, a message), which arrives as an email; reply to it with the next steps and the payment link. The first 30 days are free: Stripe takes their card now and charges on day 31, unless they cancel first. One free month per business.
-2. Collect the business details once: name, address, phone, hours, services, service area, license numbers where shown, logo and 5–10 photos of their work. These go in the customer list, and every listing is copied from them so they match exactly.
+2. Collect the business details once: name, address, phone, hours, services, service area, license numbers where shown, logo and 5–10 photos of their work. These go on the Business details tab of the customer's workbook, and every listing is copied from them so they match exactly.
 3. Ask the owner to add you as a manager of their Google Business Profile (all plans, so the report can show their numbers) and to Google Search Console for their website (free; Done-for-you also needs access to the website itself).
 4. Do the first full check (below) and send it within the first week.
 
@@ -33,14 +35,14 @@ The owner makes the changes; you tell them what to change first.
    - Search problems Google sees: Google Search Console.
    - What stops visitors from calling, checked by hand on a phone: the phone number is tappable at the top, the services and service area are clear, the quote form works, reviews are shown, and license and insurance are mentioned where the state requires it.
    - Write each problem in the website check sheet, marked high, medium or low, with one plain sentence on how to fix it. Send the top five.
-2. **Listing check.** Search each directory on the list for the business name and phone, and mark it correct, wrong or missing in the listing check sheet, with the link to fix it. All 40+ in the first month and every three months after that; the ten that matter most every month.
+2. **Listing check.** Search each directory on the list for the business name and phone, and mark it correct, wrong or missing in the listing check sheet, with the link to fix it. All 40+ in the first month and every three months after that; the core list for their trade (about 15, marked on the sheet) every month.
 3. **Monthly report.** One page from the report template: Google profile calls, website clicks and direction requests (from the profile's Performance page), new reviews and average rating, listings correct out of the total, website speed and problems fixed. Each number next to last month's.
 
 Time, a guess to check on the first customer: 2–3 hours in the first month, about 1 hour a month after that.
 
 ### Growth, $199/month: you look after listings and the Google profile
 Everything in Starter, plus:
-1. **Listings.** In the first month, create or correct the listings, the most important first, until the core list (the 15 or so directories that matter most for their trade) matches the business details. Many directories confirm a business by sending the owner a code by phone, text or post: tell the owner to expect these and pass them on the same day. After that, fix anything the listing check finds and add new directories as they come up. Save each login in the customer list under the owner's email, so the listings stay theirs.
+1. **Listings.** In the first month, create or correct the listings, the most important first, until the core list (the 15 or so directories that matter most for their trade) matches the business details. Many directories confirm a business by sending the owner a code by phone, text or post: tell the owner to expect these and pass them on the same day. After that, fix anything the listing check finds and add new directories as they come up. Open each account with the owner's email where you can, so the listings stay theirs, and keep the logins in a password manager (Bitwarden is free), never in a sheet.
 2. **Weekly Google post.** One short post a week: a recent job with a photo, a seasonal tip ("book your AC check before the heat") or an offer the owner approves. Write a month of posts at once and schedule them.
 3. **Review replies.** Google emails managers when a new review comes in. Forward each alert to the owner the same day, so they can follow up with the customer while the job is fresh. Reply to every review within two working days, in the owner's voice: thank happy customers by name and the job; answer unhappy ones calmly, without arguing, and offer to talk by phone. Ask the owner before replying to a 1- or 2-star review.
 4. **Photos.** Ask the owner to text or email 2–3 photos of their work each week. Add the best ones to the profile.
@@ -51,7 +53,7 @@ Time, a guess: 6–8 hours in the first month (the listings), then 2–3 hours a
 ### Done-for-you, $299/month: you do everything
 Everything in Growth, plus:
 1. **Website fixes.** Each month, make the fixes from the top of the website check sheet: speed (smaller images, fewer add-ons), search basics (page titles, descriptions, a page per service and per town served), and the things that stop calls (tappable phone number, a working quote form, reviews on the page). Make sure a backup exists before any change, and list what was changed in the report.
-2. **Monthly strategy call, about 30 minutes.** Book it for the owner's morning or after their workday (US time). Go through the report, agree the next month's top three fixes and the posts' themes, and hear what jobs they want more of. Use what you hear to steer posts and fixes towards those jobs.
+2. **Monthly strategy call, about 30 minutes, on Zoom or Google Meet.** Book it for the owner's morning or after their workday (US time). Go through the report, agree the next month's top three fixes and the posts' themes, and hear what jobs they want more of. Use what you hear to steer posts and fixes towards those jobs.
 
 Time, a guess: 8–12 hours in the first month, then 4–6 hours a month, plus the call.
 
