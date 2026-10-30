@@ -15,7 +15,7 @@ Many new service businesses (HVAC, roofing, detailing, cleaning, etc.) do good w
 4. **Done-for-you follow-up:** written follow-up on quotes, paid per booked job or commission. Best fit while working from Europe because it is asynchronous.
 
 ## Visibility Autopilot (monthly service)
-New businesses often lack leads before they lack closing skill, so alongside the ladder there is a monthly service that helps them get found: listings on 40+ directories, Google Business Profile care and website fixes, on one bill, with results in plain numbers.
+New businesses often lack leads before they lack closing skill, so alongside the ladder there is a monthly service that helps them get found: listings on the 15 or so directories that matter most for their trade, Google Business Profile care and website fixes, on one bill, with results in plain numbers.
 - Month to month, no setup fee, free cancellation (the rules are on the site's `/service-terms` page).
 - Everything runs by hand with free tools and Google Sheets, so it costs nothing to start. A tool can come later, once customers pay for it.
 - It leads naturally into the sales offers: more calls from being found, then more of them won with the scripts.
@@ -40,7 +40,7 @@ Time, a guess to check on the first customer: 2–3 hours in the first month, ab
 
 ### Growth, $199/month: you look after listings and the Google profile
 Everything in Starter, plus:
-1. **Listings.** In the first month, create or correct the listings, the most important first, until all 40+ match the business details. After that, fix anything the listing check finds and add new directories as they come up. Save each login in the customer list under the owner's email, so the listings stay theirs.
+1. **Listings.** In the first month, create or correct the listings, the most important first, until the core list (the 15 or so directories that matter most for their trade) matches the business details. Many directories confirm a business by sending the owner a code by phone, text or post: tell the owner to expect these and pass them on the same day. After that, fix anything the listing check finds and add new directories as they come up. Save each login in the customer list under the owner's email, so the listings stay theirs.
 2. **Weekly Google post.** One short post a week: a recent job with a photo, a seasonal tip ("book your AC check before the heat") or an offer the owner approves. Write a month of posts at once and schedule them.
 3. **Review replies.** Google emails managers when a new review comes in. Forward each alert to the owner the same day, so they can follow up with the customer while the job is fresh. Reply to every review within two working days, in the owner's voice: thank happy customers by name and the job; answer unhappy ones calmly, without arguing, and offer to talk by phone. Ask the owner before replying to a 1- or 2-star review.
 4. **Photos.** Ask the owner to text or email 2–3 photos of their work each week. Add the best ones to the profile.

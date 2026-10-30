@@ -7,7 +7,7 @@ The paid service on `/visibility`: directory listings, Google Business Profile c
 | Plan | Price | What's included |
 |---|---|---|
 | Starter | $99/month | A monthly website check with the fixes ranked, a listing check across 40+ directories, a monthly report. The owner makes the fixes. |
-| Growth | $199/month | Starter, plus listings submitted and managed, and the Google profile looked after: weekly posts, review replies, photo updates, new-review alerts. |
+| Growth | $199/month | Starter, plus listings set up by hand and kept right on the core list (the 15 or so directories that matter most for the trade), and the Google profile looked after: weekly posts, review replies, photo updates, new-review alerts. |
 | Done-for-you | $299/month | Growth, plus the website fixes made for them and a monthly strategy call. |
 
 Every plan starts with 30 days free (once per business): the card is taken at signup and first charged on day 31, and cancelling before then costs nothing. After that it's month to month: no setup fee, no contract, free cancellation by email. The month already paid for runs to its end and isn't refunded. Prices and the free month set on 2026-10-28.
@@ -16,12 +16,14 @@ Every plan starts with 30 days free (once per business): the card is taken at si
 
 Step by step, in `01-business-plan.md` (onboarding, then Starter, Growth and Done-for-you). Everything runs by hand with free tools and three Google Sheets: the website check, the listing check and the monthly report.
 
+Listings are set up by hand, not with a listing tool like rankingcoach's, which sends a business's details to many sites at once through paid deals with them. Doing 40+ by hand would be slow and pester the owner with confirmation codes, and most of those sites bring few calls, so on 2026-10-30 Growth and Done-for-you changed from "40+ directories submitted" to the core list of about 15 that matter most for the trade. Starter still checks 40+, because checking only means searching each site.
+
 ## To do before selling
 
 Until Stripe is set up, nobody can pay on the site: the plan buttons on `/visibility` and the badge order form on `/badge` send you an email with the visitor's details and question, and you reply by hand (since 2026-10-29).
 
 1. **Decide whose name the Stripe account is in.** Waiting for Emil (asked 2026-10-29): can the account be opened under Lexis? If yes, open it as Lexis. If not, register your own company first and open it under that. Either way, Stripe asks for the company's details, its bank account and a check of who runs it, and the company decides who invoices the customers, so tell the accountant (step 6) which one it is.
-2. Write the list of 40+ directories for local US service businesses, and check each is still running and free to list on. The site promises 40+, so the list has to hold at least that many.
+2. Write the list of directories for local US service businesses, and check each is still running and free to list on. It needs 40+ for the Starter listing check (the site promises that many), with the core list of about 15 that matter most for each trade marked: those are the ones Growth and Done-for-you set up by hand.
 3. Make the three Google Sheets: the website check, the listing check and the monthly report template.
 4. Set up Stripe, in the name chosen in step 1: the account, the $99, $199 and $299 monthly payment links, each with a 30-day free trial (`12-payments.md`). Stripe is already named on the Privacy page and the service terms. Products and links are made in the sandbox (Stripe's practice area). A check on 2026-10-28 found the prices right ($99, $199, $299 a month, in USD) and these fixes still to do, all at dashboard.stripe.com with the sandbox switched on (top left):
    1. **Fix the typo:** **Product catalog** → "Visibility Autopliot Done-for-you" → the **pencil** next to the name → change it to "Autopilot" → **Save**.
@@ -40,6 +42,6 @@ Until Stripe is set up, nobody can pay on the site: the plan buttons on `/visibi
 ## To do once customers come
 
 1. Time each plan for a month, so you know $99, $199 and $299 cover your hours, including the free first month.
-2. Decide how to submit listings for Growth: by hand, or a paid listing service charged per customer.
+2. If customers want more directories than the core list, look at a paid listing service and sell it as an extra: BrightLocal fills in sites for about $2–3 each, once; Moz Local keeps them in step for about $16–33 a month per business (prices from review sites, 2026-10-29: check them first).
 3. Use real results in the page and outreach (with the customer's permission). Never invent them: US rules (the FTC) ban fake testimonials.
 4. Decide whether a self-serve Starter tool is worth building.

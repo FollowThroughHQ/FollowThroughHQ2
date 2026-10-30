@@ -31,7 +31,7 @@ Most jobs aren't lost to a cheaper quote. They're lost to silence after the quot
 | To know what to say | Scripts from the first call to the review request, plus objection answers for their trade | They sound confident without sounding pushy |
 | To stop losing quotes | Follow-up messages for day 2, day 5 and day 12 | The cheapest way to win more work: no extra leads needed |
 | To see if it's worth it | The lost quotes calculator | Shows in dollars what a few more wins a month adds up to |
-| To get found | Visibility Autopilot: listings on 40+ directories, Google profile care and website fixes | More people find them and call, without them learning SEO or juggling tools |
+| To get found | Visibility Autopilot: listings on the directories that matter for their trade, Google profile care and website fixes | More people find them and call, without them learning SEO or juggling tools |
 
 ## What each offer is worth (the offer ladder from `01-business-plan.md`)
 1. **Free guides and playbook:** start right and get the first scripts, at no cost and no risk.
@@ -40,7 +40,7 @@ Most jobs aren't lost to a cheaper quote. They're lost to silence after the quot
 4. **Done-for-you follow-up (paid per booked job):** we follow up on their quotes for them. They pay only when a quote becomes a job, so there's nothing to lose.
 
 Alongside the ladder, a monthly service:
-- **Visibility Autopilot ($99 / $199 / $299 a month, first 30 days free):** their business listed correctly on 40+ directories, their Google profile kept active (weekly posts, review replies, photos, new-review alerts) and their website checked and fixed. Its edge over the alternatives: **one bill** instead of a listings tool, a review tool, a website checker and a freelancer, and **results in plain numbers** (calls, reviews, listings fixed) instead of ranking charts. 30 days free, then month to month, no setup fee, free cancellation. Details in `10-visibility-autopilot.md`.
+- **Visibility Autopilot ($99 / $199 / $299 a month, first 30 days free):** their business listed correctly on the 15 or so directories that matter most for their trade, their Google profile kept active (weekly posts, review replies, photos, new-review alerts) and their website checked and fixed. Its edge over the alternatives: **one bill** instead of a listings tool, a review tool, a website checker and a freelancer, and **results in plain numbers** (calls, reviews, listings fixed) instead of ranking charts. 30 days free, then month to month, no setup fee, free cancellation. Details in `10-visibility-autopilot.md`.
 
 ## Why us, not the alternatives
 - **Software companies' free guides** (Housecall Pro, Jobber, Joist): good tools and templates, but their guides are general and built to sell software. They don't teach what to say to win the job.
